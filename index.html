@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Lingua Pusula | Mesleki Dil Öğrenme</title>
+<meta name="description" content="Lingua Pusula ile dil öğrenimini mesleki alanınla birleştir. Beta sürümünü keşfet.">
+<meta name="theme-color" content="#344E9C">
+<meta property="og:title" content="Lingua Pusula">
+<meta property="og:description" content="Speak your field — mesleki odaklı dil öğrenme deneyimi.">
+<meta property="og:type" content="website">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fff;--sf:#fff;--ink:#0C1F46;--mute:#4F5F85;--line:#D8DFEF;--ac:#344E9C;--bl:#344E9C;--on:#fff;--pw:#E6EBF8;--tint:#F1F4FC;--sun:#6C8CE8;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root[data-theme="system"]{--bg:#0A1226;--sf:#111C38;--ink:#E8EDFA;--mute:#9AA9CC;--line:#24325A;--ac:#8FA8F0;--pw:#24325A;--tint:#16264A}}
+:root[data-theme="dark"]{--bg:#0A1226;--sf:#111C38;--ink:#E8EDFA;--mute:#9AA9CC;--line:#24325A;--ac:#8FA8F0;--pw:#24325A;--tint:#16264A}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 15px/1.55 Poppins,system-ui,sans-serif;padding-bottom:96px;overflow-x:hidden}
+h1,h2,h3{font-family:Montserrat,system-ui,sans-serif;margin:0;line-height:1.2}
+main{max-width:640px;margin:0 auto;padding:0 16px}
+.hero{position:relative;overflow:hidden;padding:28px 0 14px}
+.hero i{position:absolute;border-radius:50%;border:18px solid var(--bl);pointer-events:none}
+.hero .r1{width:130px;height:130px;top:-70px;right:-50px}
+.hero .r2{width:96px;height:96px;border-width:14px;left:-66px;bottom:-34px}
+.hero>*{position:relative}
+.logo{width:104px;color:var(--ac);display:block}
+h1{font-weight:300;font-size:42px;letter-spacing:-1px;margin-top:16px}
+.sub{color:var(--mute);font-size:14px;margin:2px 0 0}
+.tg{font-size:19px;margin:0}
+.beta{font:600 12px Poppins;background:var(--tint);color:var(--ac);border-radius:99px;padding:2px 10px;margin-left:8px;vertical-align:middle}
+h2{font-weight:700;font-size:23px;margin:26px 0 12px}
+.lb{font-weight:600;font-size:13px;color:var(--mute);margin:12px 0 6px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font:600 13px Poppins;border:2px solid var(--bl);background:var(--sf);color:var(--ink);padding:5px 14px;border-radius:99px;cursor:pointer}
+.chip.on{background:var(--bl);color:var(--on)}
+.card{background:var(--sf);border:1.5px solid var(--line);border-radius:22px;padding:16px;margin-bottom:14px;box-shadow:0 8px 16px -12px rgba(12,31,70,.35)}
+.card h3{font-size:17px;font-weight:700;color:var(--ac)}
+.card p{margin:8px 0 0}
+.best{background:var(--bl);color:var(--on);border-color:var(--bl)}.blue{background:var(--tint);border-color:var(--tint)}
+.best h3{color:var(--on)}
+.best .meta,.best .lb{color:#DCE4FA}
+.best .btn{border-color:var(--on);color:var(--on)}
+.pill{background:linear-gradient(90deg,#0A5FB0,#023B7C);border-radius:22px;padding:8px 16px;display:inline-block;margin-bottom:6px}
+.tag{background:#fff;color:#344E9C;font:700 12px Poppins,sans-serif;border-radius:99px;padding:2px 10px;display:inline-block}
+.meta{color:var(--mute);font-size:14px;margin:4px 0 10px}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.btn{font:600 13px Poppins;border:2px solid var(--ac);background:transparent;color:var(--ac);padding:7px 14px;border-radius:99px;cursor:pointer}
+.btn.on{background:var(--bl);border-color:var(--bl);color:var(--on)}
+.btn.sm{padding:3px 12px;font-size:12px}
+.note{background:var(--pw);color:var(--ink);padding:10px 14px;border-radius:14px;margin:8px 0;font-size:14px}
+.empty{text-align:center;color:var(--mute);padding:28px 8px}
+.day{display:flex;gap:12px;padding:8px 0;border-bottom:1px solid var(--line);font-size:14px}
+.day b{width:34px;flex:none;font-family:Montserrat,sans-serif}
+.day span.z{color:var(--mute)}
+input[type=range]{width:100%;accent-color:var(--ac)}
+.big{font:700 28px Montserrat,system-ui,sans-serif}
+.w{font:inherit;color:inherit;background:none;border:0;border-bottom:2px dotted var(--ac);padding:0;cursor:pointer}
+.w.on{background:var(--bl);color:var(--on)}
+.s{font-size:18px;line-height:1.6;margin:0 0 4px}
+.tr{color:var(--mute);font-size:15px;margin:0 0 14px}
+ul,ol{list-style:none;margin:8px 0 0;padding:0}
+li{position:relative;padding:4px 0 4px 30px}
+ul li::before{content:"";position:absolute;left:4px;top:11px;border-left:12px solid var(--ac);border-top:7px solid transparent;border-bottom:7px solid transparent}
+.best li::before{border-left-color:var(--on)}
+ul.x li::before,ul.ck li::before{border:0;width:20px;height:20px;border-radius:50%;left:0;top:6px;color:#fff;font:700 12px/20px Poppins;text-align:center}
+ul.x li::before{content:"✕";background:#E53935}
+ul.ck li::before{content:"✓";background:#2EAD4B}
+ol{counter-reset:n}
+ol li{counter-increment:n;padding:12px 0 12px 56px}
+ol li::before{content:"0" counter(n);position:absolute;left:0;top:50%;transform:translateY(-50%);width:42px;height:42px;border:2px solid var(--bl);border-radius:50%;text-align:center;font:400 15px/38px Montserrat,sans-serif;color:var(--ac)}
+nav{position:fixed;left:0;right:0;bottom:0;display:flex;gap:4px;background:var(--sf);border-top:1px solid var(--line);box-shadow:0 -8px 16px -12px rgba(12,31,70,.3);padding:8px 8px calc(8px + env(safe-area-inset-bottom,0px))}
+nav button{flex:1;font:600 11px Poppins;border:0;background:none;color:var(--mute);padding:9px 0;cursor:pointer;border-radius:99px}
+nav button.on{background:var(--bl);color:var(--on)}
+button:focus-visible,input:focus-visible{outline:3px solid var(--sun);outline-offset:2px}
+.hero .acc{position:absolute;right:0;top:30px;background:var(--sf)}
+#ov{position:fixed;inset:0;background:rgba(10,18,38,.6);display:none;align-items:flex-end;justify-content:center;z-index:20}
+#ov.on{display:flex}
+.sheet{background:var(--bg);width:100%;max-width:640px;border-radius:22px 22px 0 0;padding:20px 16px calc(24px + env(safe-area-inset-bottom,0px));max-height:90vh;overflow:auto}
+input[type=text],input[type=email],input[type=password]{width:100%;padding:11px 14px;border:2px solid var(--bl);border-radius:14px;background:var(--sf);color:var(--ink);font:inherit;margin:2px 0 10px}
+#toast{position:fixed;left:50%;bottom:92px;transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:9px 16px;border-radius:99px;font-size:14px;opacity:0;pointer-events:none;transition:opacity .2s;z-index:30;max-width:90vw;text-align:center}
+#toast.on{opacity:1}
+details.card summary{cursor:pointer;font:700 15px Montserrat,sans-serif;color:var(--ac)}
+details.card[open] summary{margin-bottom:6px}
+.pl{display:grid;grid-template-rows:minmax(0,7fr) minmax(0,3fr);height:min(80vh,600px);background:#000;border-radius:16px;overflow:hidden;border:2px solid var(--bl)}
+.pl.full{grid-template-rows:minmax(0,1fr)}
+.scr{display:flex;flex-direction:column;justify-content:space-between;background:#000;color:#fff;min-width:0}
+.scr .top{display:flex;justify-content:flex-end;align-items:center;gap:8px;padding:10px;font:600 11px Poppins,sans-serif;color:#E8EDFA}
+.scr .top .btn{color:#fff;border-color:#fff;flex:none}
+.scr .sb{padding:30px 12px 10px;text-align:center;font:600 17px/1.45 Poppins,sans-serif;color:#fff;background:linear-gradient(transparent,rgba(0,0,0,.75))}
+.scr .bar{height:3px;background:#262626}
+.scr .bar i{display:block;height:100%;background:#8FA8F0;transition:width .4s}
+.ctl{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:6px;padding:8px}
+.ctl button{min-width:42px;min-height:40px;border:0;border-radius:99px;background:#1f1f1f;color:#fff;font:600 14px Poppins,sans-serif;cursor:pointer}
+.ctl button.on{background:var(--bl);color:var(--on)}
+.ctl span{color:#DCE4FA;font:12px Poppins,sans-serif}
+.lab{background:var(--sf);color:var(--ink);border-top:3px solid var(--bl);padding:12px 14px;overflow:auto;font-size:13.5px;line-height:1.5;min-width:0}
+.lab h4{margin:0 0 4px;font:600 10px Poppins,sans-serif;letter-spacing:.8px;text-transform:uppercase;color:var(--ac)}
+.lab .t{font-size:15px;font-weight:600;margin-bottom:10px}
+.tm{font:600 12.5px Poppins,sans-serif;border:1.5px solid var(--bl);background:none;color:var(--ink);border-radius:99px;padding:3px 11px;margin:0 4px 4px 0;cursor:pointer}
+.tm.on{background:var(--bl);color:var(--on)}
+.lab .nt{background:var(--tint);border-radius:10px;padding:8px 10px;margin:6px 0 10px}
+.lab .btn{flex:1;min-width:120px}
+.scr{position:relative}
+.fsb{position:absolute;left:8px;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:12px;border:1px solid rgba(255,255,255,.6);background:rgba(0,0,0,.55);color:#fff;cursor:pointer;z-index:2;display:flex;align-items:center;justify-content:center}
+.fsw{position:fixed;inset:0;z-index:25;background:#000;display:flex;flex-direction:column;padding:env(safe-area-inset-top,0px) env(safe-area-inset-right,0px) env(safe-area-inset-bottom,0px) env(safe-area-inset-left,0px)}
+.fsw .pl{flex:1;height:auto;border:0;border-radius:0}
+.fsw .card{position:absolute;left:0;right:0;bottom:0;max-height:55%;overflow:auto;margin:0;border-radius:18px 18px 0 0;z-index:3}
+.fsw .scr .sb{font-size:clamp(18px,3.2vw,28px)}
+.card h3.pill{color:var(--on)}
+.scr,.lab{min-height:0}
+.vid{background:linear-gradient(160deg,hsl(var(--h) 40% 32%),hsl(var(--h) 48% 14%))}
+.vid svg{width:100%;height:100%;display:block}
+.scr>div{position:relative;z-index:1}
+.scr>.vid{position:absolute;inset:0;z-index:0}
+.mth{transform-box:fill-box;transform-origin:center;transform:scaleY(.35)}
+.sp .mth{animation:mth .26s ease-in-out infinite alternate}
+.sp .hnd{animation:hnd 1.8s ease-in-out infinite;transform-origin:246px 262px}
+.sp .bob{animation:bob 1.1s ease-in-out infinite}
+@keyframes mth{to{transform:scaleY(1.25)}}
+@keyframes hnd{50%{transform:rotate(-14deg)}}
+@keyframes bob{50%{transform:translateY(-2px)}}
+@media (prefers-reduced-motion:reduce){.sp .mth,.sp .hnd,.sp .bob{animation:none}}
+.ico{width:28px;height:28px;border-radius:50%;border:1.5px solid var(--bl);background:var(--tint);color:var(--ac);display:inline-flex;align-items:center;justify-content:center;cursor:pointer;padding:0}
+.ls{display:flex;width:100%;gap:10px;align-items:baseline;text-align:left;border:0;border-bottom:1px solid var(--line);background:none;color:var(--ink);padding:9px 0;font:inherit;cursor:pointer}
+.ls span{margin-left:auto;color:var(--mute);font-size:12px;flex:none}
+.ls.on b{color:var(--ac)}
+details.card summary{font-size:14px}
+[dir=rtl] .hero .acc{right:auto;left:0}
+[dir=rtl] .pl{direction:ltr}
+[dir=rtl] .lab{direction:rtl}
+[dir=rtl] li{padding:4px 30px 4px 0}
+[dir=rtl] ul li::before{left:auto;right:4px;border-left:0;border-right:12px solid var(--ac)}
+[dir=rtl] .best li::before{border-right-color:var(--on)}
+[dir=rtl] ul.x li::before,[dir=rtl] ul.ck li::before{right:0;border:0}
+[dir=rtl] ol li{padding:12px 56px 12px 0}
+[dir=rtl] ol li::before{left:auto;right:0}
+[dir=rtl] .ls{text-align:right}
+[dir=rtl] .ls span{margin-left:0;margin-right:auto}
+</style>
+</head>
+<body>
+<main>
+<header class="hero"><i class="r1"></i><i class="r2"></i>
+<svg class="logo" viewBox="0 0 150 112" role="img" aria-label="Lingua Pusula logosu" fill="currentColor"><path d="M4 28L10 6L16 28V84H4Z"/><path d="M18 70H126L146 76L126 82H18Z"/><path d="M34 70V46a22 22 0 0 1 44 0V70" fill="none" stroke="currentColor" stroke-width="9"/><text x="4" y="106" font-family="Montserrat,sans-serif" font-size="11" letter-spacing="1.4">LINGUA PUSULA</text></svg>
+<button id="acc" class="btn sm acc" data-a="acc">Giriş yap</button><h1>LinguaPusula</h1><p class="tg">Speak your field<span class="beta">beta</span></p></header>
+<div id="app"></div>
+</main>
+<nav id="nav"></nav>
+<div id="ov"></div><div id="toast" role="status"></div>
+<script>
+const LG={'İspanyolca':255,'Fransızca':30,'İngilizce':330,'Almanca':75},LV=['A2','B1','B2','C1'];
+const IN={'İspanyolca':'Dr. Lucía Ortega','Fransızca':'Prof. Camille Roux','İngilizce':'Dr. Daniel Hayes','Almanca':'Dr. Katrin Weber'};
+const FD={'Siyaset':[['Siyasi sistemler',6],['Uluslararası ilişkiler',8],['Diplomasi dili',10]],
+'Finans':[['Temel kavramlar',6],['Piyasalar ve yatırım',8],['Şirket raporları',10]],
+'Gastronomi':[['Mutfak ve menü dili',6],['Tarifler ve teknikler',8],['Restoran işletmeciliği',10]],
+'Hukuk':[['Hukuka giriş',6],['Sözleşme dili',8],['Uluslararası hukuk',10]]};
+const PRE=[{lang:'Fransızca',field:'Gastronomi',level:'A2'},{lang:'İspanyolca',field:'Finans',level:'B2'},{lang:'İngilizce',field:'Siyaset',level:'B1'}];
+const GL={'inflación':'enflasyon','aumento sostenido':'sürekli artış','precios':'fiyatlar','poder adquisitivo':'satın alma gücü','ahorros':'birikimler','bancos centrales':'merkez bankaları','tipos de interés':'faiz oranları','frenar':'frenlemek, yavaşlatmak','demanda':'talep'};
+const TIP={'tipos de interés':'İspanya\'da "tipo de interés", Latin Amerika\'da çoğunlukla "tasa de interés" denir.','inflación':'Enflasyon göstergesi: IPC (índice de precios al consumidor), yani TÜFE.','poder adquisitivo':'"Adquisitivo", "adquirir" (edinmek) fiilinden gelir. B2 yazılı metinlerde sık geçer.'};
+const SN=[['La inflación es el aumento sostenido de los precios en una economía.','Enflasyon, bir ekonomide fiyatların sürekli artmasıdır.'],
+['Cuando los precios suben, el poder adquisitivo de los ahorros disminuye.','Fiyatlar yükseldiğinde birikimlerin satın alma gücü azalır.'],
+['Los bancos centrales suben los tipos de interés para frenar la demanda.','Merkez bankaları talebi yavaşlatmak için faiz oranlarını artırır.']];
+const RX=new RegExp('('+Object.keys(GL).sort((a,b)=>b.length-a.length).join('|')+')','i');
+const DAYS=['Pzt','Sal','Çar','Per','Cum','Cmt','Paz'],ORD=[0,2,4,1,3,5,6];
+let s={tab:'k',lang:'İspanyolca',field:'Finans',level:'B2',prog:[],wk:6,live:0,tr:false,w:''};
+try{const o=JSON.parse(localStorage.getItem('lp-beta'));if(o)s=Object.assign(s,o)}catch(e){}
+const $=id=>document.getElementById(id);
+const eur=n=>'€'+(Math.round(n*10)/10).toString().replace('.',',');
+const hrs=e=>FD[e.field][e.i][1];
+const coins=e=>hrs(e)*(e.mode==='live'?40:10);
+const nm=e=>e.lang+' · '+e.field+': '+FD[e.field][e.i][0];
+const find=(l,f,i,v)=>s.prog.findIndex(e=>e.lang===l&&e.field===f&&e.i===i&&e.level===v);
+const chips=(k,a)=>'<div class="chips">'+a.map(v=>`<button class="chip${s[k]===v?' on':''}" data-a="set" data-k="${k}" data-v="${v}">${v}</button>`).join('')+'</div>';
+function stats(){const h=s.prog.reduce((t,e)=>t+hrs(e),0),c=s.prog.reduce((t,e)=>t+coins(e),0);return{h,c,wks:Math.max(1,Math.ceil(h/s.wk))}}
+
+function vK(){
+ let h='<h2>Hedefini seç</h2><div class="lb">Dil</div>'+chips('lang',Object.keys(LG))+'<div class="lb">Alan</div>'+chips('field',Object.keys(FD))+'<div class="lb">Seviye</div>'+chips('level',LV)+'<h2>Kurslar</h2>';
+ FD[s.field].forEach(([n,t],i)=>{const k=find(s.lang,s.field,i,s.level),m=k>=0?s.prog[k].mode:'';
+  h+=`<div class="card"><h3>${n}</h3><p class="meta">${s.lang} · ${s.level} · ${t} saat · ${IN[s.lang]} (örnek eğitmen)</p><div class="row">
+  <button class="btn${m==='video'?' on':''}" data-a="tog" data-i="${i}" data-m="video">Video · ${t*10} coin</button>
+  <button class="btn${m==='live'?' on':''}" data-a="tog" data-i="${i}" data-m="live">Birebir ders · ${t*40} coin</button></div></div>`});
+ return h+'<p class="sub">Eklediğin kurslar "Program" sekmesinde birleşir.</p>'}
+
+function vP(){
+ if(!s.prog.length)return '<h2>Programım</h2><div class="empty">Programın boş.<br>Keşfet sekmesinden en az bir kurs ekle.<p><button class="btn" data-a="tab" data-v="k">Kurs seç</button></p></div>';
+ const st=stats(),q=[...s.prog].sort((a,b)=>a.field.localeCompare(b.field)||a.i-b.i);
+ let h='<h2>Programım</h2>'+s.prog.map((e,k)=>`<div class="card row" style="justify-content:space-between"><div><b>${FD[e.field][e.i][0]}</b><div class="meta" style="margin:0">${e.lang} · ${e.level} · ${hrs(e)} saat · ${e.mode==='live'?'birebir':'video'}</div></div><button class="btn sm" data-a="del" data-k="${k}">Çıkar</button></div>`).join('');
+ h+=`<div class="lb">Haftalık çalışma süresi: <b>${s.wk} saat</b></div><input type="range" min="2" max="14" value="${s.wk}" id="wk" aria-label="Haftalık saat">
+ <p class="meta">Toplam ${st.h} saat · yaklaşık ${st.wks} hafta · ${st.c} coin</p><div class="card"><div class="row" style="justify-content:space-between"><div><b>${st.c} coin</b><div class="meta" style="margin:0">${me()?`Bakiyen: ${cf(me().coins)} coin`:'Satın almak için giriş yap'}</div></div><button class="btn on" data-a="buyprog">Coinle satın al</button></div></div><h2>İlk hafta planı</h2>`;
+ const used=Math.min(s.wk,7),base=Math.floor(s.wk/used),rem=s.wk%used,per=Array(7).fill(0);
+ ORD.slice(0,used).forEach((d,j)=>per[d]=base+(j<rem?1:0));
+ let qi=0,left=q.length?hrs(q[0]):0;
+ per.forEach((p,d)=>{let t=[];while(p>0&&qi<q.length){const u=Math.min(p,left);t.push(FD[q[qi].field][q[qi].i][0]+' ('+u+' sa)');p-=u;left-=u;if(left===0){qi++;left=qi<q.length?hrs(q[qi]):0}}
+  h+=`<div class="day"><b>${DAYS[d]}</b><span class="${t.length?'':'z'}">${t.length?t.join(' + '):'Dinlenme'}</span></div>`});
+ const fl=new Set(s.prog.map(e=>e.field)).size,ll=new Set(s.prog.map(e=>e.lang)).size,la=s.prog[s.prog.length-1];
+ h+='<h2>Koç notları</h2>';
+ if(ll>1)h+='<div class="note">Birden fazla dili aynı anda almak ilerlemeyi yavaşlatır. Önce bir dile odaklan.</div>';
+ if(fl>2)h+='<div class="note">Aynı anda 2\'den fazla alan var. Bir alanı sonraki döneme bırak.</div>';
+ if(s.wk<4)h+='<div class="note">Haftada 4 saatin altında, seviye atlamak uzun sürer. Süreyi artırmayı dene.</div>';
+ const nx=FD[la.field].findIndex((_,i)=>find(la.lang,la.field,i,la.level)<0);
+ if(nx>=0)h+=`<div class="note">Sıradaki uyumlu kurs: <b>${FD[la.field][nx][0]}</b> (${la.lang} · ${la.level}). <button class="btn sm" data-a="sug" data-i="${nx}">Ekle</button></div>`;
+ else if(ll<=1&&fl<=2&&s.wk>=4)h+='<div class="note">Sıralama uyumlu. Bu alandaki tüm modüller programında.</div>';
+ h+=`<div class="note">Programı bitirince CV ve LinkedIn profiline ekleyebileceğin bir Lingua Pusula sertifikası alırsın.</div>`;
+ return h}
+
+const FRS=[
+{fr:`Demain, je vais aller à l'école de commerce.`,tr:`Yarın ticaret okuluna gideceğim.`,
+ t:[[`vais`,`aller fiilinin je ile çekimi. Yakın gelecek için yardımcı fiil görevinde.`],[`aller`,`Mastar. Cümlenin ana fiili: gitmek.`],[`à l'école`,`à + école: okula. l' = la, ünlüden önce kısalır.`]],
+ d:[`<b>Neden vais?</b> Yakın gelecek (futur proche) şöyle kurulur: aller fiilinin şimdiki zaman çekimi + mastar. Je vais, tu vas, il va, nous allons, vous allez, ils vont. Burada vais yalnızca "-ecek" anlamını veren yardımcıdır.`,`<b>Neden aller?</b> Yardımcıdan sonra gelen ana fiil çekimlenmez, mastar kalır. Ana fiil de "gitmek" olduğu için aller iki kez geçer: vais (yardımcı) + aller (ana fiil).`,`<b>Karşılaştır:</b> Je vais à l'école = okula gidiyorum. Je vais aller à l'école = okula gideceğim.`]},
+{fr:`Il faut que j'aille à l'école avant que le cours commence.`,tr:`Ders başlamadan önce okula gitmem gerekiyor.`,
+ t:[[`il faut que`,`Zorunluluk kalıbı. Ardından subjonctif gelir.`],[`j'aille`,`aller fiilinin subjonctif présent çekimi (que j'aille).`],[`avant que`,`-meden önce. Ardından subjonctif gelir.`],[`commence`,`commencer, subjonctif présent.`]],
+ d:[`<b>Neden aille, vais değil?</b> Il faut que'den sonra fiil subjonctif'e geçer. aller'nin subjonctif'i düzensizdir: que j'aille, tu ailles, il aille, nous allions, vous alliez, ils aillent.`,`<b>Neden avant que + commence?</b> avant que her zaman subjonctif ister. -er fiillerinde il/je biçimi indicatif ile aynı görünür (commence), ama kural yine subjonctif'tir.`,`<b>İpucu:</b> Özne aynıysa mastar kullanılır: avant d'aller (gitmeden önce). Özne farklıysa avant que + subjonctif.`]},
+{fr:`Bien que ce soit difficile, je ne renonce pas.`,tr:`Zor olsa da vazgeçmiyorum.`,
+ t:[[`bien que`,`-e rağmen. Ardından subjonctif gelir.`],[`soit`,`être fiilinin subjonctif'i (que ce soit).`],[`ne ... pas`,`Olumsuzluk kalıbı, renonce fiilini sarar.`]],
+ d:[`<b>Neden soit?</b> bien que karşıtlık bağlacıdır ve subjonctif ister. être'in subjonctif présent'i: que je sois, tu sois, il soit, nous soyons, vous soyez, ils soient.`,`<b>Ana cümle neden indicatif?</b> Kuralın etkisi yalnızca bien que'den sonraki yan cümledeki fiilde görülür. je ne renonce pas normal şimdiki zamandır.`,`<b>Karşılaştır:</b> parce que + indicatif (sebep), bien que + subjonctif (karşıtlık).`]},
+{fr:`Si j'avais su, je serais venu plus tôt.`,tr:`Bilseydim daha erken gelirdim.`,
+ t:[[`j'avais su`,`plus-que-parfait: avoir (imparfait) + su (savoir'ın ortacı).`],[`je serais venu`,`conditionnel passé: être (conditionnel) + venu.`],[`plus tôt`,`Daha erken.`]],
+ d:[`<b>Yapı:</b> Geçmişte gerçekleşmemiş koşul: si + plus-que-parfait, conditionnel passé.`,`<b>Neden serais venu?</b> venir, être ile çekimlenen hareket fiillerindendir. Bu yüzden ortaç özneye uyar: elle serait venue, nous serions venus.`,`<b>Sık hata:</b> si'den sonra conditionnel kullanılmaz. Si j'aurais su yanlıştır, Si j'avais su doğrudur.`]},
+{fr:`Le professeur dont je t'ai parlé donne un cours ce soir.`,tr:`Sana bahsettiğim öğretmen bu akşam ders veriyor.`,
+ t:[[`dont`,`"de" içeren yapının yerini tutan ilgi zamiri (parler de).`],[`je t'ai parlé`,`passé composé. t' = te (sana).`],[`donne un cours`,`Ders vermek.`]],
+ d:[`<b>Neden dont?</b> parler de quelqu'un yapısındaki "de" zamirin içine girer: le professeur dont je parle. dont'tan sonra doğrudan özne gelir.`,`<b>Tekrar etme:</b> "de" zaten dont içinde olduğu için tekrar konmaz. Le professeur dont je t'ai parlé doğru, ... parlé de lui yanlıştır.`,`<b>t' kim?</b> parler à quelqu'un yapısında muhatap te/t' olur. Bahsedilen kişi dont, muhatap t'.`]}];
+const LN={fr:'Fransızca',es:'İspanyolca',en:'İngilizce',de:'Almanca',it:'İtalyanca'},SL={fr:'fr-FR',es:'es-ES',en:'en-GB',de:'de-DE',it:'it-IT'};
+const ml=(l,lv,f,ti,bd,s,t,d,hh)=>{const T=t.split('|').map(x=>x.split('=')),D=[d];return{l,lv,f,ti,bd:bd.split('|'),s:s.split('|').map(x=>{const a=x.split('~');return{fr:a[0],tr:a[1],t:T,d:D}}),h:hh.split('~')}};
+const LSN=[{l:'fr',per:1,lv:'B2',f:'Dilbilgisi',ti:'Subjonctif ve koşullar',bd:['Le subjonctif','Il faut que…','Bien que…'],s:FRS,h:['subjonctif','Adı Latince "subiunctivus" (bağlanmış) sözcüğünden gelir; kip genellikle başka bir fiile bağlı yan cümlelerde kullanıldığı için bu adı almıştır.']},
+ml('es','B2','Finans','Enflasyon nedir?',`La inflación|Precios ↑|Poder adquisitivo ↓`,`La inflación es el aumento sostenido de los precios en una economía.~Enflasyon, bir ekonomide fiyatların sürekli artmasıdır.|Cuando suben los precios, el poder adquisitivo de los ahorros disminuye.~Fiyatlar yükseldiğinde birikimlerin satın alma gücü azalır.`,`inflación=enflasyon|poder adquisitivo=satın alma gücü`,`<b>inflación</b>: genel fiyat düzeyindeki sürekli artış. Göstergesi İspanyolcada IPC (índice de precios al consumidor), yani TÜFE. <b>poder adquisitivo</b>: aynı parayla alınabilen mal miktarı.`,`inflación~16. yüzyılda Salamanca Okulu'ndan Martín de Azpilcueta, Amerika'dan gelen gümüşün paranın değerini düşürdüğünü yazdı. Bu, para miktarı ile fiyatlar arasındaki ilişkinin erken bir tartışmasıdır.`),
+ml('en','B2','Hukuk','Sözleşme ihlali',`Breach of contract|Remedies|Damages`,`A breach of contract occurs when one party fails to perform its obligations.~Taraflardan biri yükümlülüklerini yerine getirmediğinde sözleşme ihlali olur.|The injured party may claim damages or ask for specific performance.~Zarar gören taraf tazminat isteyebilir ya da aynen ifa talep edebilir.`,`breach of contract=sözleşme ihlali|damages=tazminat`,`<b>damages</b> hukukta tazminat demektir ve her zaman çoğul kullanılır; tekil damage yalnızca "hasar" anlamına gelir. <b>specific performance</b>: mahkemenin tazminat yerine sözleşmenin aynen yerine getirilmesine karar vermesi.`,`damages~Common law mahkemelerinde tazminat ilkeleri yüzyıllar içinde içtihatla şekillendi. 1854 tarihli Hadley v Baxendale davası, öngörülebilir zarar ilkesiyle bugün hâlâ temel kaynaktır.`),
+ml('de','B1','Mühendislik','Yenilenebilir enerji',`Erneuerbare Energie|Wind · Sonne · Wasser|Netzstabilität`,`Windkraftanlagen wandeln Bewegungsenergie in Strom um.~Rüzgâr enerjisi santralleri hareket enerjisini elektriğe dönüştürür.|Die Energiewende soll den CO₂-Ausstoß senken.~Enerji dönüşümü karbondioksit salımını azaltmayı hedefliyor.`,`Windkraftanlage=rüzgâr enerjisi santrali|Energiewende=enerji dönüşümü`,`<b>Windkraftanlage</b> bileşik sözcüktür: Wind (rüzgâr) + Kraft (güç) + Anlage (tesis). Almancada uzun teknik terimler böyle kurulur. <b>Energiewende</b> dişildir: die Energiewende.`,`Energiewende~Terim, 1980'de Öko-Institut'un yayımladığı bir çalışmayla yaygınlaştı. Almanya'da yenilenebilir enerjiyi destekleyen yasa 2000 yılında çıktı.`),
+ml('fr','B1','Gastronomi','Mutfak brigadı',`La brigade de cuisine|Chef · Sous-chef · Commis|Mise en place`,`Le chef de cuisine dirige toute la brigade.~Mutfak şefi tüm brigadı yönetir.|Avant le service, chaque commis termine sa mise en place.~Servisten önce her commis mise en place hazırlığını bitirir.`,`brigade de cuisine=mutfak brigadı|mise en place=servis öncesi hazırlık`,`<b>mise en place</b> kelimesi kelimesine "yerine koyma" demektir: malzeme doğranır, tartılır ve servise hazır dizilir. <b>commis</b> şefin altındaki çırak seviyesidir.`,`brigade de cuisine~Modern mutfak brigadı sistemini 19. yüzyılın sonu ile 20. yüzyılın başında Auguste Escoffier düzenledi. Görevleri bölümlere ayıran bu yapı restoran mutfaklarında hâlâ kullanılıyor.`),
+ml('es','B1','Siyaset','Seçim sistemleri',`Sistema electoral|Voto directo|Representación`,`En una democracia, los ciudadanos eligen a sus representantes mediante el voto.~Demokraside vatandaşlar temsilcilerini oy yoluyla seçer.|El sistema electoral define cómo los votos se convierten en escaños.~Seçim sistemi oyların sandalyeye nasıl dönüştüğünü belirler.`,`sistema electoral=seçim sistemi|escaño=parlamentoda koltuk`,`<b>escaño</b>: parlamentodaki milletvekili koltuğu. <b>representación proporcional</b>: koltuklar oy oranına göre dağıtılır; karşıtı çoğunluk sistemidir.`,`sistema electoral~Oyları koltuğa çeviren D'Hondt yöntemi, Belçikalı hukukçu Victor D'Hondt'un adını taşır. İspanya da milletvekili seçiminde bu yöntemi kullanır.`),
+ml('en','B2','Tıp','Triyaj',`Triage|Priority · Vital signs|Emergency department`,`In the emergency department, nurses triage patients by the severity of their condition.~Acil serviste hemşireler hastaları durumlarının ciddiyetine göre sınıflandırır.|The most critical cases are treated first.~En kritik vakalar önce tedavi edilir.`,`triage=aciliyete göre sınıflandırma|vital signs=yaşamsal belirtiler`,`<b>triage</b> isim ve fiil olarak kullanılır: to triage patients. <b>vital signs</b>: nabız, tansiyon, vücut sıcaklığı ve solunum sayısı; triyajın ilk ölçütleridir.`,`triage~Sözcük Fransızca "trier" (ayıklamak) fiilinden gelir. Yaralıları aciliyete göre sıralama fikri, Napolyon savaşlarında cerrah Dominique Jean Larrey ile ilişkilendirilir.`),
+ml('de','B1','Ekonomi','Orta ölçekli işletmeler',`Der Mittelstand|Familienunternehmen|Export`,`Der Mittelstand besteht aus vielen kleinen und mittleren Unternehmen.~Mittelstand, çok sayıda küçük ve orta ölçekli işletmeden oluşur.|Viele dieser Firmen sind Familienunternehmen und exportieren weltweit.~Bu firmaların çoğu aile şirketidir ve dünya çapında ihracat yapar.`,`Mittelstand=KOBİ çekirdeği|Familienunternehmen=aile şirketi`,`<b>Mittelstand</b> (der): Almanya'da özellikle sanayi ve ihracatta öne çıkan küçük ve orta ölçekli işletmeler. <b>Familienunternehmen</b> = Familie + Unternehmen.`,`Mittelstand~Sözcük Almancada "orta sınıf" anlamına da gelir; bugün ekonomide küçük ve orta ölçekli, çoğu aile işletmesi olan firmaları anlatır.`),
+ml('en','B1','Bilişim','Bulut bilişim',`Cloud computing|Servers · Storage|Pay as you go`,`Cloud computing lets companies rent servers instead of buying them.~Bulut bilişim şirketlerin sunucu satın almak yerine kiralamasını sağlar.|They pay only for the storage and power they use.~Yalnızca kullandıkları depolama ve işlem gücü için öderler.`,`cloud computing=bulut bilişim|storage=depolama`,`<b>pay as you go</b>: kullandığın kadar öde; bulut hizmetlerinin temel fiyatlama mantığı. <b>server</b>: sunucu; bulutta bu bilgisayarlar veri merkezlerinde durur.`,`cloud computing~Ağ şemalarında internet bir bulut simgesiyle gösterilirdi, "bulut" adı buradan yerleşti. Amazon Web Services'in 2006'da kiralık sunucu hizmetini sunmasıyla kavram yaygınlaştı.`),
+ml('fr','B2','Mimarlık','Betonarme',`Le béton armé|Fondations|Façade`,`Le béton armé combine la résistance de l'acier et celle du béton.~Betonarme, çeliğin ve betonun dayanımını birleştirir.|L'ingénieur calcule les fondations avant de couler le béton.~Mühendis betonu dökmeden önce temelleri hesaplar.`,`béton armé=betonarme|fondations=temel`,`<b>fondations</b> mimarlıkta hep çoğuldur. <b>avant de + mastar</b>: aynı özne iki eylemi yapıyorsa kullanılır: avant de couler (dökmeden önce).`,`béton armé~Betonarme sistemi 19. yüzyıl sonunda Fransız mühendis François Hennebique geliştirdi ve 1892'de patentledi.`),
+ml('es','B1','Pazarlama','Marka ve konumlandırma',`La marca|Público objetivo|Posicionamiento`,`Una marca fuerte genera confianza en el público objetivo.~Güçlü bir marka hedef kitlede güven yaratır.|El posicionamiento define el lugar de la marca en la mente del cliente.~Konumlandırma, markanın müşterinin zihnindeki yerini belirler.`,`público objetivo=hedef kitle|posicionamiento=konumlandırma`,`<b>público objetivo</b>: ürünün ulaşmak istediği kitle. <b>-miento</b> eki fiilden isim türetir: posicionar → posicionamiento.`,`posicionamiento~Konumlandırma kavramı 1969'da Jack Trout'un yazısıyla ortaya çıktı, 1981'de Al Ries ve Trout'un "Positioning" kitabıyla yayıldı.`),
+ml('en','B2','Psikoloji','Bilişsel yanlılık',`Cognitive bias|Heuristics|Decision-making`,`Cognitive biases are systematic errors in how we process information.~Bilişsel yanlılıklar bilgiyi işleme biçimimizdeki sistematik hatalardır.|Confirmation bias makes us favour evidence that supports what we already believe.~Doğrulama yanlılığı, zaten inandığımızı destekleyen kanıtları tercih ettirir.`,`cognitive bias=bilişsel yanlılık|confirmation bias=doğrulama yanlılığı`,`<b>systematic</b>: rastgele değil, aynı yönde tekrarlayan; yanlılığı sıradan hatadan ayırır. <b>favour</b> İngiliz yazımıdır, Amerikan yazımı favor.`,`cognitive bias~Terim 1970'lerde Amos Tversky ve Daniel Kahneman'ın karar verme araştırmalarıyla psikolojiye yerleşti.`),
+ml('de','B2','Hukuk','Kira sözleşmesi',`Der Mietvertrag|Kündigungsfrist|Kaution`,`Der Mietvertrag legt die Rechte und Pflichten von Mieter und Vermieter fest.~Kira sözleşmesi kiracı ile kiraya verenin hak ve yükümlülüklerini belirler.|Für Mieter beträgt die Kündigungsfrist in der Regel drei Monate.~Kiracılar için fesih süresi genellikle üç aydır.`,`Kündigungsfrist=fesih süresi|Kaution=kira güvencesi (depozito)`,`<b>Kündigungsfrist</b> bileşik sözcüktür: Kündigung (fesih) + Frist (süre). <b>Mieter</b> kiracı, <b>Vermieter</b> evi kiraya verendir; ikisi sık karıştırılır.`,`Mietvertrag~Almanya'da kira ilişkisi Medeni Kanun'da (BGB) düzenlenir; BGB 1900'de yürürlüğe girdi.`),
+ml('en','B1','Havacılık','Hava trafik kontrolü',`Air traffic control|Runway · Taxiway|Clearance`,`The controller gives the aircraft clearance to take off.~Kontrolör uçağa kalkış izni verir.|Pilots must read back important instructions.~Pilotlar önemli talimatları geri okumak zorundadır.`,`clearance=(uçuş) izni|runway=pist`,`<b>clearance</b> havacılıkta kontrolörün verdiği resmi izindir: take-off clearance, landing clearance. <b>read back</b>: alınan talimatı sözlü olarak tekrarlamak.`,`air traffic control~Havacılıkta telsizle trafik yönlendirme 1920'lerde başladı. Uluslararası Sivil Havacılık Örgütü (ICAO) 1947'de çalışmaya başladı ve ortak kuralları belirler.`),
+ml('fr','B1','Moda','Haute couture',`La haute couture|Atelier · Collection|Défilé`,`Les maisons de haute couture présentent deux collections par an.~Haute couture evleri yılda iki koleksiyon sunar.|Chaque pièce est cousue à la main dans un atelier.~Her parça bir atölyede elle dikilir.`,`haute couture=yüksek moda|défilé=defile`,`<b>haute couture</b> kelimesi kelimesine "yüksek dikiş" demektir; her parça müşteriye özel hazırlanır. <b>cousue</b>: coudre (dikmek) fiilinin dişil ortacı, çünkü pièce dişildir.`,`haute couture~Haute couture'ün başlangıcı 19. yüzyılda Paris'te çalışan İngiliz Charles Frederick Worth'a bağlanır. Fransa'da bu ad belirli ölçütlere bağlı, korunan bir ünvandır.`),
+ml('it','B1','Sanat tarihi','Chiaroscuro',`Il chiaroscuro|Luce e ombra|Rinascimento`,`Il chiaroscuro usa il contrasto tra luce e ombra per dare volume alle figure.~Chiaroscuro, figürlere hacim vermek için ışık ve gölge karşıtlığını kullanır.|Caravaggio è famoso per i suoi forti contrasti di luce.~Caravaggio güçlü ışık karşıtlıklarıyla ünlüdür.`,`chiaroscuro=ışık-gölge tekniği|contrasto=karşıtlık`,`<b>chiaroscuro</b> iki sözcüğün birleşimidir: chiaro (açık) + scuro (koyu). <b>volume</b>: resimde derinlik ve hacim izlenimi.`,`chiaroscuro~Teknik Rönesans'ta gelişti. Leonardo da Vinci yumuşak geçişlerle kullandı, Caravaggio 1600 civarında sert ve dramatik biçimde öne çıkardı.`),
+ml('en','B2','Finans','Merkez bankası ve faiz',`Central bank|Interest rate|Monetary policy`,`The central bank raises interest rates to curb inflation.~Merkez bankası enflasyonu dizginlemek için faiz oranlarını artırır.|Higher rates make borrowing more expensive for businesses.~Yüksek faiz, işletmeler için borçlanmayı pahalılaştırır.`,`interest rate=faiz oranı|monetary policy=para politikası`,`<b>to curb</b>: dizginlemek; haberlerde "curb inflation" kalıbı sık geçer. <b>borrowing</b>: borçlanma; kredi alan borrower, veren lender'dır.`,`central bank~Bank of England 1694'te kuruldu ve ilk merkez bankalarından biri sayılır.`),
+ml('es','B1','Turizm','Otel rezervasyonu',`La reserva|Habitación doble|Check-in`,`Quisiera reservar una habitación doble para tres noches.~Üç gecelik bir çift kişilik oda ayırtmak istiyorum.|El desayuno está incluido en el precio.~Kahvaltı fiyata dahildir.`,`reservar=rezervasyon yapmak|incluido=dahil`,`<b>quisiera</b> kibar rica kalıbıdır (querer fiilinin subjuntivo biçimi): "quiero"dan daha nazik. <b>incluido</b> dahil demektir; dişil ve çoğulda değişir: incluida, incluidos.`,`reserva~Bilgisayarlı rezervasyon sistemleri 1960'larda havayollarında doğdu (Sabre) ve sonra otellere yayıldı.`),
+ml('de','B2','Tasarım','Bauhaus',`Das Bauhaus|Form folgt Funktion|Weimar · Dessau`,`Das Bauhaus verband Kunst, Handwerk und Technik.~Bauhaus sanatı, zanaatı ve tekniği birleştirdi.|Die Schule wurde 1919 in Weimar gegründet.~Okul 1919'da Weimar'da kuruldu.`,`Bauhaus=tasarım okulu ve akımı|Handwerk=zanaat`,`<b>wurde gegründet</b>: edilgen geçmiş zaman (Passiv Präteritum): werden + Partizip II, "kuruldu". <b>Form folgt Funktion</b>: biçim işlevi izler; modern tasarımın temel ilkesi.`,`Bauhaus~Walter Gropius 1919'da Weimar'da kurdu. Okul Dessau'ya, sonra Berlin'e taşındı ve 1933'te kapandı.`),
+ml('en','B1','Gazetecilik','Haber yazımı',`Journalism|Headline · Lead|Verify the source`,`A good headline summarises the story in a few words.~İyi bir başlık haberi birkaç kelimeyle özetler.|Journalists must always verify their sources.~Gazeteciler kaynaklarını her zaman doğrulamalıdır.`,`headline=manşet, başlık|verify=doğrulamak`,`<b>lead</b> (ya da lede) haberin ilk paragrafıdır; kim, ne, nerede, ne zaman ve neden sorularını yanıtlar. <b>source</b>: kaynak.`,`lead~Önemli bilgiyi başa koyan ters piramit düzeni, telgrafla haber iletiminin yaygınlaştığı 19. yüzyılda gelişti diye anlatılır.`)];
+let PL={i:0,k:0,play:false,lab:true,tm:0,dt:false,hs:false,snd:false,fs:false,nat:false};
+const PA=['pp','nx','pv','lab','tm','dt','hs','snd','fs','ai'],cur=()=>LSN[PL.k],sn=()=>cur().s;
+const SK=['#F1C9A5','#D9A47A','#B9805A','#8D5A3C'],HR=['#2B2118','#5A3A22','#1B1B1B','#8A8A8A','#9C5A2B'],SH=['#344E9C','#2F7D6B','#7A3E8E','#B5473C','#2D5F8A','#444B5C'];
+function scene(k,i){
+ const q=LSN[k],b=q.bd,sk=SK[k%4],hr=HR[k%5],sh=SH[k%6],gl=k%3===0;
+ const ln=b.map((t,j)=>`<text x="22" y="${118+j*34}" font-family="Montserrat,sans-serif" font-weight="700" font-size="16" fill="#fff" fill-opacity="${j===i%b.length?.95:.3}">${t}</text>`).join('');
+ return `<svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMin meet" aria-hidden="true">${ln}<g class="bob"><path d="M232 300q0-62 78-62t78 62z" fill="${sh}"/><rect x="298" y="206" width="24" height="34" fill="${sk}"/><circle cx="310" cy="178" r="38" fill="${sk}"/><path d="M272 172a38 38 0 0 1 76 0q-38-26-76 0z" fill="${hr}"/><circle cx="297" cy="176" r="3.4" fill="#222"/><circle cx="323" cy="176" r="3.4" fill="#222"/>${gl?'<g fill="none" stroke="#222" stroke-width="2"><circle cx="297" cy="176" r="9"/><circle cx="323" cy="176" r="9"/><path d="M306 176h8"/></g>':''}<ellipse class="mth" cx="310" cy="196" rx="10" ry="5" fill="#7A2E2E"/></g><g class="hnd"><path d="M246 262L228 214" stroke="${sh}" stroke-width="18" stroke-linecap="round"/><circle cx="227" cy="208" r="9" fill="${sk}"/></g></svg>`}
+const UN={tr:'Turkish',en:'English',fr:'French',de:'German',it:'Italian',pt:'Portuguese',ar:'Arabic'},UL={tr:'Türkçe',en:'English',fr:'Français',de:'Deutsch',it:'Italiano',pt:'Português',ar:'العربية'},RF={tr:'Basit anlatım',en:'Simpler wording',fr:'Reformulation',de:'Einfachere Formulierung',it:'Riformulazione',pt:'Reformulação',ar:'إعادة صياغة'},LE={fr:'French',es:'Spanish',en:'English',de:'German',it:'Italian'};
+let AC={},TC={},DX={},DN={},LC2={};const AF={};let LZ='',LP='';
+try{const o=JSON.parse(localStorage.getItem('lp-ai'));if(o){AC=o.AC||{};TC=o.TC||{};DX=o.DX||{};DN=o.DN||{};LC2=o.LC2||{}}}catch(e){}
+const saveAI=()=>{try{localStorage.setItem('lp-ai',JSON.stringify({AC:Object.fromEntries(Object.entries(AC).filter(x=>!x[1].err)),TC,DX,DN,LC2}))}catch(e){}};
+const san=t=>esc(t).replace(/&lt;(\/?)(b|i)&gt;/g,'<$1$2>');
+const trBtn=()=>'';
+const lc=t=>s.ui==='tr'?t:(LC2[s.ui+'|'+t]||t);
+const lzUpd=()=>{const e=$('lzp');if(e)e.textContent=LP};
+const lzBar=()=>s.ui==='tr'||DN[s.ui]?'':`<div class="note" id="lzb">${LZ==='run'?'<span>Çeviriliyor…</span> <small data-keep id="lzp">'+LP+'</small>':(LZ.slice(0,3)==='err'?'<span>Pusula AI çevirisi hazırlanamadı</span> <small data-keep>('+esc(LZ.slice(4))+')</small>':'<span>Bu dil için içerik henüz çevrilmedi.</span>')} ${LZ==='run'?'':'<button class="btn sm" data-a="lz">Pusula AI ile çevir</button>'}</div>`;
+async function localize(){
+ const L=s.ui;if(L==='tr'||LZ==='run')return;LZ='run';LP='1/3';let bad=0,ec='';
+ try{
+  if(typeof claude==='undefined')throw{code:'no_runtime'};
+  const sm=await claude.use('sample');if(!sm)throw{code:'unavailable'};
+  const U=UN[L],base='Keep numbers, currency amounts, brand names (Lingua Pusula, Pusula AI), abbreviations (TAM, SAM, SOM, B2B, CAC, CV, A2, B1, B2, C1), HTML tags <b> and <i>, and words in other languages exactly as they are.'+(L==='ar'?' Use Modern Standard Arabic.':'');
+  const tx=async(list,pairs)=>{try{
+   const o=await sm.json(`Translate ${pairs?'the first element of each [Turkish, English] pair (the English is only context)':'every string'} from Turkish to ${U}. ${base} ${pairs?'Preserve any leading or trailing spaces and punctuation of the Turkish text. ':''}Return ONLY a JSON array of exactly ${list.length} strings in the same order.\n`+JSON.stringify(list),{modelTier:'quick'});
+   if(!Array.isArray(o)||o.length!==list.length)throw{code:'bad_reply'};return o.map(x=>typeof x==='string'?x:'')
+  }catch(e){bad=1;ec=ec||(e&&e.code)||'error';return null}};
+  const chunk=async(items,fn,pairs)=>{for(let i=0;i<items.length;i+=50){const part=items.slice(i,i+50),o=await tx(part,pairs);if(o)o.forEach((v,j)=>{if(v)fn(part[j],v)})}};
+  if(L!=='en'&&L!=='fr'&&!DX[L]){
+   const ek=Object.keys(EX),E={},B=[];
+   await chunk(ek.map(k=>[k,EX[k]]),(p,v)=>{E[p[0]]=v},true);
+   await chunk(SB.map(x=>[x[0],x[1]]),(p,v)=>{B.push([p[0],v])},true);
+   if(Object.keys(E).length===ek.length&&B.length===SB.length)DX[L]={E,B:B.sort((a,b)=>b[0].length-a[0].length)}
+  }
+  LP='2/3';lzUpd();
+  const st=new Set();LSN.forEach(q=>{q.s.forEach(c=>{st.add(c.tr);c.t.forEach(x=>st.add(x[1]));c.d.forEach(x=>st.add(x))});if(q.h)st.add(q.h[1])});
+  await chunk([...st].filter(x=>!LC2[L+'|'+x]),(k,v)=>{LC2[L+'|'+k]=san(v)});
+  LP='3/3';lzUpd();
+  const dv=document.createElement('div');dv.innerHTML=vV()+vO();
+  const w=document.createTreeWalker(dv,4),pg=new Set();let n;while(n=w.nextNode()){const z=n.nodeValue.trim();if(z.length>1)pg.add(z)}
+  await chunk([...pg].filter(x=>!TC[L+'|'+x]),(k,v)=>{TC[L+'|'+k]=v});
+  if(bad)throw{code:ec||'partial'};
+  DN[L]=1;LZ='';saveAI()
+ }catch(e){LZ='err:'+((e&&e.code)||'error');saveAI()}
+ if(LZ==='run')LZ='';
+ r()}
+async function aiLesson(){
+ const key=s.ui+'|'+PL.k;if(AF[key])return;delete AC[key];AF[key]=1;rd();
+ try{
+  const sm=await claude.use('sample');if(!sm)throw 0;
+  const q=cur(),U=UN[s.ui],H=s.ui!=='tr'&&q.h?`,"hist":"${U} translation of this note, or an empty string if unsure: ${q.h[1]}"`:'';
+  const o=await sm.json(`You are Pusula AI, a patient language tutor. The learner's app language is ${U}. The lesson language is ${LE[q.l]} (level ${q.lv}), field: ${q.f}, topic: ${q.ti}.
+For EACH sentence below explain step by step, in ${U} only, the way a good teacher answers "why this word, why this form here?": for every key word or form say what it is and why it is used (verb form and tense, article, preposition or case, agreement, fixed phrase, professional term) and, when useful, contrast it with a similar form that would be wrong.
+Return ONLY JSON of this shape: {"s":[{"tr":"the sentence translated into ${U}; if the sentence is already in ${U}, a simpler rephrasing in ${U}","terms":[["word or phrase from the sentence","short note in ${U}"]],"detail":["short paragraph"]}]${H}}
+Use 3 to 5 terms and 3 to 5 short paragraphs per sentence; you may wrap explained words in <b></b>. One object in "s" per sentence, same order. Be accurate.
+Sentences:
+${q.s.map((x,i)=>(i+1)+'. '+x.fr).join('\n')}`);
+  if(!o||!Array.isArray(o.s)||o.s.length!==q.s.length||o.s.some(x=>!x||typeof x.tr!=='string'||!Array.isArray(x.terms)||!x.terms.length||!Array.isArray(x.detail)))throw 1;
+  AC[key]=o;saveAI()
+ }catch(e){AC[key]={err:1}}
+ AF[key]=0;rd()}
+async function trAI(){
+ try{const sm=await claude.use('sample');if(!sm)throw 0;
+  const w=document.createTreeWalker($('app'),4),N=[];let n;while(n=w.nextNode()){const z=n.nodeValue.trim();if(z.length>1&&n.parentElement.closest('[data-keep]')&&!TC[s.ui+'|'+z])N.push([n,z])}
+  if(!N.length){toast('Çeviri hazır');return}
+  toast('Çeviriliyor…');
+  const o=await sm.json(`Translate every string in this JSON array from Turkish to ${UN[s.ui]}. Keep numbers, currency symbols, brand names (Lingua Pusula, Pusula AI) and abbreviations (TAM, SAM, SOM, B2B, CAC) as they are. Return ONLY a JSON array with exactly ${N.length} strings in the same order.\n`+JSON.stringify(N.map(x=>x[1])));
+  if(!Array.isArray(o)||o.length!==N.length)throw 1;
+  N.forEach((x,i)=>{if(typeof o[i]==='string')TC[s.ui+'|'+x[1]]=o[i]});saveAI();xl($('app'));toast('Çeviri hazır')
+ }catch(e){toast('Pusula AI şu an kullanılamıyor.')}}
+function plHTML(){
+ const q=cur(),S=sn(),n=S.length,c=S[PL.i],key=s.ui+'|'+PL.k,A=AC[key],ok=A&&!A.err,bad=A&&A.err,wait=!!AF[key],U1=ok?A.s[PL.i]:null;
+ const X=U1?{tr:san(U1.tr),t:U1.terms.map(x=>Array.isArray(x)?[esc(x[0]),san(x[1]||'')]:[esc(x),'']),d:U1.detail.map(san),h:s.ui==='tr'?q.h:(q.h&&A.hist?[q.h[0],san(A.hist)]:null),ai:1}:{tr:lc(c.tr),t:c.t.map(x=>[x[0],lc(x[1])]),d:c.d.map(lc),h:q.h&&[q.h[0],lc(q.h[1])],ai:0};
+ const k=X.t[Math.min(PL.tm,X.t.length-1)]||['',''],loc=!X.ai&&s.ui!=='tr'&&DN[s.ui],lbl=(X.ai||loc)?(q.l===s.ui?RF[s.ui]:UL[s.ui]):'Türkçe';
+ const msg=X.ai||wait?'':bad?'<p class="meta" style="margin:6px 0">Pusula AI şu an kullanılamıyor.</p>':s.ui!=='tr'&&!DN[s.ui]?'<p class="meta" style="margin:6px 0">Örnek açıklama Türkçedir. Kendi dilinde almak için Pusula AI düğmesine dokun.</p>':'';
+ const ab=!X.ai&&!wait&&!(s.ui==='tr'&&q.per)?'<button class="btn sm on" data-a="ai">Pusula AI ile açıkla</button>':'';
+ return `<div class="pl${PL.lab?'':' full'}"><div class="scr"><div class="vid${PL.play?' sp':''}" style="--h:${PL.k*47%360}">${scene(PL.k,PL.i)}</div><button class="fsb" data-a="fs" aria-label="${PL.fs?'Tam ekrandan çık':'Tam ekran'}">${PL.fs?`<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 4v5H4M15 4v5h5M9 20v-5H4M15 20v-5h5"/></svg>`:`<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg>`}</button><div class="top"><button class="btn sm" data-a="lab" aria-pressed="${PL.lab}">Lab ${PL.lab?'▴':'▾'}</button></div><div class="sb" aria-live="polite">${c.fr}</div><div><div class="bar"><i style="width:${(PL.i+1)/n*100}%"></i></div><div class="ctl"><button data-a="pv" aria-label="Önceki cümle">⏮</button><button class="on" data-a="pp" aria-label="Oynat veya duraklat">${PL.play?'⏸':'▶'}</button><button data-a="nx" aria-label="Sonraki cümle">⏭</button><button class="${PL.snd?'on':''}" data-a="snd" aria-label="Seslendir">🔊</button><button class="${PL.dt?'on':''}" data-a="dt" aria-label="Detaylı açıklama">ⓘ</button><span>${PL.i+1}/${n}</span></div></div></div>`
+ +(PL.lab?`<aside class="lab"><h4${X.ai||loc?' data-keep':''}>${lbl}</h4><div class="t" data-keep>${wait?'…':X.tr}</div><h4>Dip not</h4><div>${X.t.map((x,i)=>`<button class="tm${i===PL.tm?' on':''}" data-a="tm" data-v="${i}">${x[0]}</button>`).join('')}</div><div class="nt"${wait?'':' data-keep'}>${wait?'Pusula AI hazırlıyor…':k[1]}</div>${msg}<div class="row" style="margin-top:8px"><button class="btn sm" data-a="dt">${PL.dt?'Detayı kapat':'Detaylı açıklama'}</button>${ab}</div></aside>`:'')+'</div>'
+ +(PL.dt?`<div class="card"><h3>Detaylı açıklama · ${PL.i+1}. cümle</h3><p class="meta" style="margin:4px 0 0"><i>${c.fr}</i></p>${wait&&!U1?'<p class="meta">Pusula AI hazırlıyor…</p>':''}${X.t.map(x=>`<div class="row" style="margin-top:8px"><b>${x[0]}</b><span class="meta" style="margin:0" data-keep>${x[1]}</span></div>`).join('')}${X.d.map(x=>`<p data-keep>${x}</p>`).join('')}${X.h?`<div class="row" style="margin-top:10px"><b>${X.h[0]}</b><span class="meta" style="margin:0">terimin tarihçesi</span><button class="ico" data-a="hs" aria-label="Tarihçeyi aç" aria-expanded="${PL.hs}"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></button></div>${PL.hs?`<div class="note"><b>Tarihçe:</b> <span data-keep>${X.h[1]}</span></div>`:''}`:''}<p><button class="btn sm" data-a="dt">Kapat</button></p></div>`:'')}
+function vD(){const q=cur();return `<h2>Dersler</h2><details class="card" style="padding:10px 14px"><summary>${PL.k+1}. ${q.ti} · ${LN[q.l]} ${q.lv}</summary>${LSN.map((x,i)=>`<button class="ls${i===PL.k?' on':''}" data-a="ls" data-v="${i}"><b>${i+1}</b>${x.ti}<span>${LN[x.l]} ${x.lv} · ${x.f}</span></button>`).join('')}</details><div id="plw"${PL.fs?' class="fsw"':''}>${plHTML()}</div><p class="sub">Alt yazı ilerlerken terimler dip notta görünür, ayrıntısı ⓘ ile açılır. Terimin yanındaki saat simgesi tarihçesini açar.</p>`}
+const say=()=>{if(!PL.snd)return;try{speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(sn()[PL.i].fr);u.lang=SL[cur().l];speechSynthesis.speak(u)}catch(e){}};
+const rd=()=>{const w=$('plw');if(w){w.className=PL.fs?'fsw':'';w.innerHTML=plHTML();xl(w)}};
+const exitFs=()=>{PL.fs=false;PL.nat=false;try{if(document.fullscreenElement)document.exitFullscreen()}catch(e){}try{screen.orientation.unlock()}catch(e){}};
+document.addEventListener('fullscreenchange',()=>{if(!document.fullscreenElement&&PL.fs&&PL.nat){PL.fs=false;PL.nat=false;rd()}});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&PL.fs&&!PL.nat){PL.fs=false;rd()}});
+setInterval(()=>{if(PL.play&&s.tab==='d'){if(PL.i<sn().length-1){PL.i++;PL.tm=0;PL.hs=false;say()}else PL.play=false;rd()}},5500);
+
+function vF(){
+ const st=stats(),has=s.prog.length>0,mo=Math.max(1,Math.ceil(st.wks/4)),gift=50*mo;
+ const live=s.prog.filter(e=>e.mode==='live').reduce((t,e)=>t+coins(e),0);
+ const c1=st.c*0.22,c2=mo*24+Math.max(0,live-gift)*0.22,best=has?(c1<=c2?1:2):0;
+ const SE=[[25,12],[100,9],[500,6]],[sn,sp]=SE[s.seat||0];
+ const tg=b=>b===best?'<span class="tag">Senin programın için en uygun</span>':'';
+ let h='<h2>Ödeme yöntemleri</h2>'+(has?`<p class="meta">Programın: ${st.h} saat · yaklaşık ${mo} ay · ${live} coin tutarında birebir ders</p>`:'<p class="meta">Programına kurs ekle, bireysel modellerde ne tutacağını gör.</p>');
+ h+=`<div class="card${best===2?' best':''}"><h3>Tematik paket</h3><p class="meta">Seviye + alan + kategori paketi, ayda €24. Pusula AI koçu, alanına uyarlanmış video içerikler ve ayda 50 hediye coin içerir. Birebir dersleri coinle alırsın.</p>${has?`<span class="big">${eur(c2)}</span> ${tg(2)}`:''}
+ <div class="lb">Hazır tematik paketler</div>`+PRE.map((p,i)=>`<div class="row" style="justify-content:space-between;padding:4px 0"><span>${p.lang} ${p.level} · ${p.field}</span><button class="btn sm" data-a="pre" data-v="${i}">Yükle</button></div>`).join('')+'</div>';
+ h+=`<div class="card${best===1?' best':''}"><h3>Coin</h3><p class="meta">Paket gerekmez. Ekstra içeriklere ve uzman eğitmenle birebir canlı derslere kullandıkça öde. 100 coin €25, 300 coin €66, 700 coin €140.</p><div class="row" style="margin-bottom:10px">${PK.map((p,i)=>`<button class="btn sm" data-a="pack" data-v="${i}">${p[0]} coin · €${p[1]}</button>`).join('')}</div>${has?`<span class="big">${eur(c1)}</span> ${tg(1)}`:''}</div>`;
+ h+=`<div class="card"><h3>Kurumsal (B2B)</h3><p class="meta">Üniversite, danışmanlık firması ve özel eğitim kurumları kapalı sınıf açar, kendi içeriklerini ekler, kütüphaneden içerik alır.</p><div class="chips" style="margin-bottom:10px">${SE.map((e,i)=>`<button class="chip${(s.seat||0)===i?' on':''}" data-a="seat" data-v="${i}">${e[0]} öğrenci</button>`).join('')}</div><span class="big">${eur(sn*sp)}</span> <span class="meta">/ ay · kişi başı €${sp}</span></div>`;
+ return h+'<p class="sub">Fiyatlar beta için örnektir.</p>'+trBtn()+'<div data-keep>'+vO()+'</div>'}
+
+function vV(){
+ const C=(t,a,k='')=>`<div class="card${k==='pill'?' blue':k==='ck'?' best':''}"><h3${k==='pill'?' class="pill"':''}>${t}</h3><ul class="${k==='x'||k==='ck'?k:''}">${a.map(x=>`<li>${x}</li>`).join('')}</ul></div>`;
+ return `<h2>Derdimiz ne?</h2><div class="card blue"><p style="margin:0">Geleneksel dil kursları yabancı dili yalnızca günlük iletişim seviyesinde, aşılması gereken bir sınav olarak konumlandırıyor. Oysa küresel arenada rekabet eden Z kuşağı için dil bir amaç değil; uluslararası mülakatlarda, akademik projelerde ve mesleki uzmanlık alanlarında doğrudan kullanılacak stratejik bir araç.</p><p>Mevcut sistem, kariyerini belirli bir dikeyde kurmak isteyen gençlerin sektörel terminoloji ve profesyonel ifade ihtiyacını karşılayamıyor. Lingua Pusula zaman ve mekan sınırlarını kaldırarak "dil öğrenmek için vakit kaybetme" problemini, mesleki gelişim sağlarken dili içselleştirme fırsatına dönüştürüyor.</p></div>`
+ +`<h2>Çözümümüz ne?</h2>`
+ +C('CV odaklı profesyonel sertifikasyon',['Eğitim belirsiz bir dil seviyesiyle bitmez','CV ve LinkedIn profiline eklenebilen, uluslararası alanda geçerli sertifika'],'pill')
+ +C('İçerik ve dil entegre öğrenimi',['Dili değil alanı öğren: gramer ezberi yerine mesleki alanı hedefleyen dilde öğrenim','Hedef: ilgili ülkelerin kurum ve eğitmenleriyle ortaklık, o ülkede geçerli mesleki belgelere hazırlık'],'pill')
+ +C('AI destekli Pusula asistanı',['Ders içi dinamik panel: anlık terminoloji çevirisi ve sektörel hap bilgiler','Akıllı eğitim koçu: hedef ve seviyene uygun kişisel rota'],'pill')
+ +`<h2>Sektör potansiyeli</h2>`
+ +C('TAM (total addressable market)',[`Küresel EdTech pazarı 2026'da 214,5 milyar $`,`2034'te 588,7 milyar $, yıllık %13,45 büyüme`],'pill')
+ +C('SAM (serviceable available market)',[`Dijital dil öğrenme 2025'te 46,1 milyar $, 2035'te yaklaşık 158,5 milyar $`,`Eğitimde yapay zekâ 2026'da 9,5 - 11,4 milyar $, yıllık %34-36 büyüme`],'pill')
+ +C('SOM (serviceable obtainable market)',[`Belirli bir alandan başlayıp küçük, odaklı bir kitleye ulaşmak`,`Örnek: yurtdışında eğitime hazırlanan öğrenciler`],'pill')
+ +`<p class="sub">Rakamlar sunumdaki kaynaklara göre: Fortune Business Insights, Global Insights Services.</p>`
+ +`<h2>Neden Lingua Pusula?</h2>`
+ +C('Geleneksel dil uygulamaları (Duolingo, Babbel)',[`Sadece günlük konuşma ve temel gramer`,`Herkes için aynı, standart ilerleme ağacı`,`CV'de profesyonel karşılığı yok, eğlence odaklı`,`Tamamen yapay, gerçek uzman yok`],'x')
+ +C('Video eğitim programları (Coursera, Udemy)',[`Sadece mesleki içerik`,`Birbirinden bağımsız, plansız kurslar`,`Mesleki sertifika verir ama dil yetkinliğini kanıtlamaz`,`Tek yönlü video, etkileşim asgari`],'x')
+ +C('Lingua Pusula',[`Dili ve mesleki alanı aynı anda öğretir (CLIL modeli)`,`Yapay zekâ asistanıyla kişisel, entegre öğrenme rotası`,`Hem alan hem dil yetkinliğini kanıtlayan sertifika`,`Alan uzmanlarının videoları, 1:1 ders ve danışmanlık`],'ck')
+ +`<h2>Pazara çıkış</h2><div class="card"><p style="margin:0">Geniş ve pahalı kampanyalar yerine hiper-odaklı, organik büyüme: Z kuşağının zaten içinde olduğu akademik ağlar ve topluluklar üzerinden düşük müşteri edinme maliyetiyle sadık bir erken benimseyen kitlesi.</p><ol><li>Üniversite kulüpleri ve öğrenci topluluklarında kapalı beta</li><li>TikTok ve Reels'ta kısa eğitici içerikler, kampüslerde fiziki materyal</li><li>Yurtdışı eğitim danışmanlığı ve özel eğitim kurumlarıyla pilot anlaşmalar, paket lisans</li><li>Yeni kullanıcı davet eden öğrenciye coin ödülü</li></ol></div>`
+ +`<h2>Neye ihtiyacımız var?</h2><div class="card"><ul><li>Akreditasyon ve kurum ortaklıkları için network</li><li>Stratejik mentörlük</li><li>Yazılım ve sunucu altyapı desteği</li></ul></div>`
+ +`<h2>Ekibimiz (beklemede)</h2>`+['Melek Yılmaz','Ayşe Nur Çetinkaya','Asya Celep'].map(n=>`<div class="card blue"><h3>${n}</h3><p class="meta" style="margin:2px 0 0">Co-founder</p></div>`).join('')
+ +`<p class="sub" style="text-align:center;margin-top:18px">contact.linguapusula@gmail.com</p>`}
+
+
+let DB={users:{},session:null},OV='',AM='login',PI=0;
+try{const o=JSON.parse(localStorage.getItem('lp-db'));if(o&&o.users)DB=o}catch(e){}
+const PK=[[100,25],[300,66],[700,140]],sv=()=>{try{localStorage.setItem('lp-db',JSON.stringify(DB))}catch(e){}},me=()=>DB.users[DB.session]||null,cf=n=>n.toLocaleString(({en:'en-US',fr:'fr-FR',de:'de-DE',it:'it-IT',pt:'pt-PT',ar:'ar-u-nu-latn'})[s.ui]||'tr-TR');
+const esc=t=>String(t).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+async function hx(t){try{const b=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(t));return[...new Uint8Array(b)].map(x=>x.toString(16).padStart(2,'0')).join('')}catch(e){return btoa(unescape(encodeURIComponent(t)))}}
+async function mk(n,p){const salt=Math.random().toString(36).slice(2);return{name:n,salt,hash:await hx(salt+p),coins:1000,hist:[{t:Date.now(),k:'Hoş geldin bonusu (beta)',c:1000}],owned:[]}}
+function toast(m){const t=$('toast');t.textContent=tr1(m);t.className='on';clearTimeout(toast.t);toast.t=setTimeout(()=>t.className='',2800)}
+function hdr(){const u=me();$('acc').textContent=u?cf(u.coins)+' coin':tr1('Giriş yap')}
+function rov(){
+ const o=$('ov'),u=me();if(!OV){o.className='';o.innerHTML='';return}
+ const X='<button class="btn sm" data-a="close">Kapat</button>';let b='';
+ if(OV==='buy'){const p=PK[PI];b=`<h2 style="margin-top:0">Coin yükle</h2><div class="card blue"><span class="big">${p[0]} coin</span><p class="meta">€${p[1]} · test modu, gerçek ödeme alınmaz</p></div><div class="row"><button class="btn on" data-a="pay">Öde (test)</button><button class="btn" data-a="close">Vazgeç</button></div>`}
+ else if(u){b=`<div class="row" style="justify-content:space-between"><div><h2 style="margin:0">${esc(u.name)}</h2><p class="meta" style="margin:0">${esc(DB.session)}</p></div>${X}</div>
+ <div class="card blue" style="margin-top:14px"><span class="meta" style="margin:0">Coin bakiyesi</span><br><span class="big">${cf(u.coins)}</span></div>
+ <div class="row" style="margin-bottom:6px">${PK.map((p,i)=>`<button class="btn sm" data-a="pack" data-v="${i}">+${p[0]} coin · €${p[1]}</button>`).join('')}</div>
+ <h3 style="margin-top:18px">Hareketler</h3>${u.hist.slice(0,6).map(x=>`<div class="day"><span class="z">${new Date(x.t).toLocaleDateString(({en:'en-GB',fr:'fr-FR',de:'de-DE',it:'it-IT',pt:'pt-PT',ar:'ar-u-nu-latn'})[s.ui]||'tr-TR')}</span><span>${esc(x.k)}</span><b style="width:auto;margin-left:auto">${x.c>0?'+':''}${x.c}</b></div>`).join('')}
+ <h3 style="margin-top:18px">Satın alınanlar</h3>${u.owned.length?'<ul>'+u.owned.slice(-6).map(x=>`<li>${esc(x)}</li>`).join('')+'</ul>':'<p class="meta">Henüz yok.</p>'}
+ <p><button class="btn" data-a="out">Çıkış yap</button></p>`}
+ else{const R=AM==='reg';b=`<div class="row" style="justify-content:space-between"><h2 style="margin:0">Hesap</h2>${X}</div>
+ <div class="chips" style="margin:12px 0"><button class="chip${R?'':' on'}" data-a="am" data-v="login">Giriş</button><button class="chip${R?' on':''}" data-a="am" data-v="reg">Kayıt ol</button></div>
+ ${R?'<label class="lb" for="f-n">Ad soyad</label><input id="f-n" type="text" autocomplete="name">':''}
+ <label class="lb" for="f-e">E-posta</label><input id="f-e" type="email" autocomplete="email">
+ <label class="lb" for="f-p">Şifre</label><input id="f-p" type="password" autocomplete="${R?'new':'current'}-password">
+ <p id="ferr" class="meta" role="alert" style="margin:0 0 8px"></p>
+ <div class="row"><button class="btn on" data-a="${R?'reg':'login'}">${R?'Kayıt ol, 1.000 coin kazan':'Giriş yap'}</button><button class="btn" data-a="demo">Demo hesabıyla gir</button></div>
+ <p class="sub">Beta: hesaplar yalnızca bu tarayıcıda saklanır. Yeni hesaba 1.000 coin hoş geldin bonusu yüklenir.</p>`}
+ o.innerHTML=`<div class="sheet" role="dialog" aria-modal="true">${b}</div>`;o.className='on';xl(o);const f=o.querySelector('input,button');if(f)f.focus()}
+function vO(){
+ const D=(t,a)=>`<details class="card"><summary>${t}</summary>${a}</details>`,U=a=>'<ul>'+a.map(x=>`<li>${x}</li>`).join('')+'</ul>';
+ return `<h2>Ödeme altyapısı nasıl kurulacak?</h2><p class="meta">Betada ödeme test modundadır, gerçek para alınmaz. Canlıya geçişte kurulacak yapı şöyle:</p>`
+ +D('1. Ödeme akışı',`<ol><li>Kullanıcı coin paketini seçer, sunucumuz ödeme sağlayıcısında bir ödeme oturumu açar.</li><li>Kart bilgisi sağlayıcının güvenli formuna girilir, 3D Secure ile onaylanır. Kart verisi bizim sunucumuza uğramaz.</li><li>Sağlayıcı sonucu webhook ile bildirir. İmzayı doğrular, aynı bildirimi ikinci kez işlemeyiz.</li><li>Onaylanan tutar coin olarak cüzdan defterine yazılır.</li><li>Kurs veya birebir ders alınınca coin düşer. Eğitmen payı, ders tamamlanınca eğitmene aktarılır.</li></ol>`)
+ +D('2. Sağlayıcı seçimi',U(['İlk aday iyzico: BDDK lisanslı ve PCI-DSS sertifikalı. Pazaryeri modelinde tahsilatı korumalı hesapta tutup alt üye işyerlerine (eğitmenlere) dağıtabiliyor.','Alternatif: PayTR, alt üye işyeri desteği var.','Üçüncü taraf kaynaklarda iyzico komisyonu %2,79 + 0,25 TL\'den başlıyor. Gerçek oran hacme göre teklifle belirlenir.','Yabancı kart, çoklu para birimi ve eğitmen ödemesi kurallarını başvuruda yazılı teyit edin. Stripe gibi küresel sağlayıcılarda şirketinizin kurulu olduğu ülkenin desteklenip desteklenmediğine bakın.']))
+ +D('3. Coin cüzdanı (defter)',U(['Bakiye tek bir sayı değil, hareket kayıtlarından hesaplanır: yükleme, harcama, hediye, iade.','Her harekette tutar, zaman, neden ve ödeme referansı tutulur. Bakiye eksiye düşemez.','Hoş geldin ve davet coinleri "hediye" olarak ayrı izlenir, iade edilmez.']))
+ +D('4. Aşamalar',U(['Beta (şimdi): test modu, hesaplar tarayıcıda.','Faz 1: sunucu tarafı giriş (e-posta, Google), tek sağlayıcıyla coin satışı.','Faz 2: eğitmen onayı, kimlik ve IBAN doğrulama, alt üye işyeriyle pay dağıtımı, bekletme süresi.','Faz 3: kurumsal lisans, e-faturalı havale/EFT.','Faz 4: mobil uygulama. Mağazaların dijital ürün satın alma kuralları ve komisyonları ayrıca değerlendirilir.']))
+ +D('5. Hukuk ve vergi',U(['Coin ön ödemeli bakiye sayılabilir. Yalnızca kendi platformunda kullanılması ve eğitmen ödemeleri, ödeme/elektronik para mevzuatı açısından avukatla netleştirilmeli.','KDV, e-arşiv/e-fatura ve yurtdışı satışta vergi için mali müşavire danışın.','Mesafeli satış sözleşmesi, iade ve cayma, coin son kullanma politikası yazılmalı.','KVKK ve GDPR uyumu. Sağlayıcılar genelde şirket veya vergi kaydı, banka hesabı ve site şartları sayfaları ister.','Bu bölüm hukuki tavsiye değildir.']))}
+
+const EX=Object.fromEntries([['Keşfet','Explore'],['Ders','Lesson'],['Fiyat','Pricing'],['Vizyon','Vision'],['Ayarlar','Settings'],['Giriş yap','Sign in'],['Giriş','Sign in'],['Dil','Language'],['Alan','Field'],['Seviye','Level'],['Hedefini seç','Choose your goal'],['Kurslar','Courses'],
+['Eklediğin kurslar "Program" sekmesinde birleşir.','Courses you add are combined in the "Program" tab.'],['Programım','My program'],['Programın boş.','Your program is empty.'],['Keşfet sekmesinden en az bir kurs ekle.','Add at least one course from the Explore tab.'],['Kurs seç','Pick a course'],
+['Satın almak için giriş yap','Sign in to buy'],['Coinle satın al','Buy with coins'],['İlk hafta planı','First week plan'],['Çıkar','Remove'],['Dinlenme','Rest'],['Ekle','Add'],['Koç notları','Coach notes'],
+['Pzt','Mon'],['Sal','Tue'],['Çar','Wed'],['Per','Thu'],['Cum','Fri'],['Cmt','Sat'],['Paz','Sun'],
+['Birden fazla dili aynı anda almak ilerlemeyi yavaşlatır. Önce bir dile odaklan.','Learning several languages at once slows you down. Focus on one first.'],
+[`Aynı anda 2'den fazla alan var. Bir alanı sonraki döneme bırak.`,'You have more than 2 fields at once. Leave one for the next term.'],
+['Haftada 4 saatin altında, seviye atlamak uzun sürer. Süreyi artırmayı dene.','Under 4 hours a week, moving up a level takes long. Try to study more.'],
+['Sıralama uyumlu. Bu alandaki tüm modüller programında.','The order works well. All modules in this field are in your program.'],
+['Programı bitirince CV ve LinkedIn profiline ekleyebileceğin bir Lingua Pusula sertifikası alırsın.','When you finish the program you get a Lingua Pusula certificate for your CV and LinkedIn profile.'],
+['Dersler','Lessons'],['Türkçe','Turkish'],['Dip not','Footnotes'],['Detaylı açıklama','Detailed explanation'],['Detayı kapat','Close details'],['Kapat','Close'],['terimin tarihçesi','history of the term'],['Tarihçe:','History:'],
+['Alt yazı ilerlerken terimler dip notta görünür, ayrıntısı ⓘ ile açılır. Terimin yanındaki saat simgesi tarihçesini açar.','Terms appear as footnotes while the subtitles play. Open details with ⓘ. The clock icon next to a term opens its history.'],
+['Tam ekran','Full screen'],['Tam ekrandan çık','Exit full screen'],['Önceki cümle','Previous sentence'],['Oynat veya duraklat','Play or pause'],['Sonraki cümle','Next sentence'],['Seslendir','Read aloud'],['Tarihçeyi aç','Open history'],
+['Ödeme yöntemleri','Payment methods'],['Programına kurs ekle, bireysel modellerde ne tutacağını gör.','Add courses to your program to see what it costs in each model.'],['Tematik paket','Thematic package'],
+['Seviye + alan + kategori paketi, ayda €24. Pusula AI koçu, alanına uyarlanmış video içerikler ve ayda 50 hediye coin içerir. Birebir dersleri coinle alırsın.','A level + field + category package at €24 a month. Includes the Pusula AI coach, video content adapted to your field and 50 gift coins a month. You buy 1:1 lessons with coins.'],
+['Hazır tematik paketler','Ready-made thematic packages'],['Yükle','Load'],
+['Paket gerekmez. Ekstra içeriklere ve uzman eğitmenle birebir canlı derslere kullandıkça öde. 100 coin €25, 300 coin €66, 700 coin €140.','No package needed. Pay as you go for extra content and live 1:1 lessons with expert instructors. 100 coins €25, 300 coins €66, 700 coins €140.'],
+['Senin programın için en uygun','Best for your program'],['Kurumsal (B2B)','Business (B2B)'],
+['Üniversite, danışmanlık firması ve özel eğitim kurumları kapalı sınıf açar, kendi içeriklerini ekler, kütüphaneden içerik alır.','Universities, consultancies and private institutions open closed classes, add their own content and use the library.'],
+['Fiyatlar beta için örnektir.','Prices are samples for the beta.'],
+['Hesap','Account'],['Kayıt ol','Sign up'],['Ad soyad','Full name'],['E-posta','Email'],['Şifre','Password'],['Kayıt ol, 1.000 coin kazan','Sign up and get 1,000 coins'],['Demo hesabıyla gir','Enter with demo account'],
+['Beta: hesaplar yalnızca bu tarayıcıda saklanır. Yeni hesaba 1.000 coin hoş geldin bonusu yüklenir.','Beta: accounts are stored only in this browser. A new account gets a 1,000 coin welcome bonus.'],
+['Coin bakiyesi','Coin balance'],['Hareketler','Transactions'],['Satın alınanlar','Purchased'],['Henüz yok.','None yet.'],['Çıkış yap','Sign out'],['Coin yükle','Top up coins'],['Öde (test)','Pay (test)'],['Vazgeç','Cancel'],
+['Adını yaz.','Enter your name.'],['Geçerli bir e-posta yaz.','Enter a valid email.'],['Şifre en az 6 karakter olmalı.','Password must be at least 6 characters.'],['Bu e-posta kayıtlı. Giriş yap.','This email is registered. Sign in.'],['E-posta veya şifre hatalı.','Wrong email or password.'],
+['Çıkış yapıldı','Signed out'],['Demo hesabıyla giriş yapıldı','Signed in with the demo account'],['Hoş geldin! 1.000 coin hesabına yüklendi','Welcome! 1,000 coins added to your account'],['Giriş yapıldı','Signed in'],['Önce giriş yap','Sign in first'],['Satın alındı. Hesabından görebilirsin','Purchased. You can see it in your account'],
+['Uygulama arayüzünün dili.','Language of the app interface.'],['Tema','Theme'],['Açık','Light'],['Koyu','Dark'],['Sistem','System'],['Açık tema varsayılandır.','Light is the default theme.'],['Hakkında','About'],
+['Ayarlar ve hesaplar bu tarayıcıda saklanır. Vizyon, ödeme altyapısı ve ders içerikleri şimdilik Türkçe.','Settings and accounts are stored in this browser. Vision, payment infrastructure and lesson content are in Turkish only for now.'],
+['Lingua Pusula · Beta sürüm','Lingua Pusula · Beta version']]);
+const SB=[['Birebir ders','1:1 lesson'],['birebir','1:1'],[' saat',' hours'],['(örnek eğitmen)','(sample instructor)'],['İspanyolca','Spanish'],['Fransızca','French'],['İngilizce','English'],['Almanca','German'],['İtalyanca','Italian'],
+['Siyasi sistemler','Political systems'],['Uluslararası ilişkiler','International relations'],['Diplomasi dili','Language of diplomacy'],['Temel kavramlar','Core concepts'],['Piyasalar ve yatırım','Markets and investing'],['Şirket raporları','Company reports'],['Mutfak ve menü dili','Kitchen and menu language'],['Tarifler ve teknikler','Recipes and techniques'],['Restoran işletmeciliği','Restaurant management'],['Hukuka giriş','Introduction to law'],['Sözleşme dili','Contract language'],['Uluslararası hukuk','International law'],
+['Dilbilgisi','Grammar'],['Siyaset','Politics'],['Finans','Finance'],['Gastronomi','Gastronomy'],['Hukuk','Law'],['Mühendislik','Engineering'],['Tıp','Medicine'],['Ekonomi','Economics'],['Bilişim','IT'],['Mimarlık','Architecture'],['Pazarlama','Marketing'],['Psikoloji','Psychology'],['Havacılık','Aviation'],['Moda','Fashion'],['Sanat tarihi','Art history'],['Turizm','Tourism'],['Tasarım','Design'],['Gazetecilik','Journalism'],
+['Subjonctif ve koşullar','Subjunctive and conditions'],['Enflasyon nedir?','What is inflation?'],['Sözleşme ihlali','Breach of contract'],['Yenilenebilir enerji','Renewable energy'],['Mutfak brigadı','Kitchen brigade'],['Seçim sistemleri','Electoral systems'],['Triyaj','Triage'],['Orta ölçekli işletmeler','Mid-sized businesses'],['Bulut bilişim','Cloud computing'],['Betonarme','Reinforced concrete'],['Marka ve konumlandırma','Brand and positioning'],['Bilişsel yanlılık','Cognitive bias'],['Kira sözleşmesi','Rental contract'],['Hava trafik kontrolü','Air traffic control'],['Merkez bankası ve faiz','Central bank and interest'],['Otel rezervasyonu','Hotel booking'],['Haber yazımı','News writing'],
+['Detaylı açıklama','Detailed explanation'],['. cümle','. sentence'],[' hafta',' weeks'],['Toplam','Total'],['yaklaşık','about'],['Haftalık çalışma süresi:','Weekly study time:'],['Bakiyen:','Your balance:'],['Sıradaki uyumlu kurs:','Next compatible course:'],[' sa)',' h)'],[' ay · ',' months · '],[' coin tutarında birebir ders',' coins of 1:1 lessons'],['Programın:','Your program:'],[' öğrenci',' students'],['/ ay · kişi başı','/ month · per person'],[' test modu, gerçek ödeme alınmaz',' test mode, no real payment'],['Hoş geldin bonusu (beta)','Welcome bonus (beta)'],['Coin yükleme (test):','Coin top-up (test):'],['Program satın alındı:','Program purchased:'],[' kurs',' courses'],[' coin yüklendi',' coins added'],['Bakiye yetersiz:','Insufficient balance:'],[' coin eksik',' coins short']].sort((a,b)=>b[0].length-a[0].length);
+const EXF={"Keşfet": "Explorer", "Ders": "Leçon", "Fiyat": "Tarifs", "Vizyon": "Vision", "Ayarlar": "Réglages", "Giriş yap": "Se connecter", "Giriş": "Connexion", "Dil": "Langue", "Alan": "Domaine", "Seviye": "Niveau", "Hedefini seç": "Choisis ton objectif", "Kurslar": "Cours", "Eklediğin kurslar \"Program\" sekmesinde birleşir.": "Les cours que tu ajoutes sont regroupés dans l'onglet « Programme ».", "Programım": "Mon programme", "Programın boş.": "Ton programme est vide.", "Keşfet sekmesinden en az bir kurs ekle.": "Ajoute au moins un cours depuis l'onglet Explorer.", "Kurs seç": "Choisir un cours", "Satın almak için giriş yap": "Connecte-toi pour acheter", "Coinle satın al": "Acheter avec des coins", "İlk hafta planı": "Plan de la première semaine", "Çıkar": "Retirer", "Dinlenme": "Repos", "Ekle": "Ajouter", "Koç notları": "Notes du coach", "Pzt": "Lun", "Sal": "Mar", "Çar": "Mer", "Per": "Jeu", "Cum": "Ven", "Cmt": "Sam", "Paz": "Dim", "Birden fazla dili aynı anda almak ilerlemeyi yavaşlatır. Önce bir dile odaklan.": "Apprendre plusieurs langues à la fois ralentit ta progression. Concentre-toi d'abord sur une seule.", "Aynı anda 2'den fazla alan var. Bir alanı sonraki döneme bırak.": "Tu as plus de 2 domaines en même temps. Reporte-en un au prochain trimestre.", "Haftada 4 saatin altında, seviye atlamak uzun sürer. Süreyi artırmayı dene.": "En dessous de 4 heures par semaine, changer de niveau prend du temps. Essaie d'étudier davantage.", "Sıralama uyumlu. Bu alandaki tüm modüller programında.": "L'ordre est cohérent. Tous les modules de ce domaine sont dans ton programme.", "Programı bitirince CV ve LinkedIn profiline ekleyebileceğin bir Lingua Pusula sertifikası alırsın.": "À la fin du programme, tu obtiens un certificat Lingua Pusula à ajouter à ton CV et à ton profil LinkedIn.", "Dersler": "Leçons", "Türkçe": "Turc", "Dip not": "Notes", "Detaylı açıklama": "Explication détaillée", "Detayı kapat": "Fermer le détail", "Kapat": "Fermer", "terimin tarihçesi": "histoire du terme", "Tarihçe:": "Histoire :", "Alt yazı ilerlerken terimler dip notta görünür, ayrıntısı ⓘ ile açılır. Terimin yanındaki saat simgesi tarihçesini açar.": "Les termes apparaissent en notes pendant les sous-titres. Ouvre le détail avec ⓘ. L'icône d'horloge à côté d'un terme ouvre son histoire.", "Tam ekran": "Plein écran", "Tam ekrandan çık": "Quitter le plein écran", "Önceki cümle": "Phrase précédente", "Oynat veya duraklat": "Lecture ou pause", "Sonraki cümle": "Phrase suivante", "Seslendir": "Lire à voix haute", "Tarihçeyi aç": "Ouvrir l'histoire", "Ödeme yöntemleri": "Moyens de paiement", "Programına kurs ekle, bireysel modellerde ne tutacağını gör.": "Ajoute des cours à ton programme pour voir son coût dans chaque modèle.", "Tematik paket": "Pack thématique", "Seviye + alan + kategori paketi, ayda €24. Pusula AI koçu, alanına uyarlanmış video içerikler ve ayda 50 hediye coin içerir. Birebir dersleri coinle alırsın.": "Un pack niveau + domaine + catégorie à 24 € par mois. Il comprend le coach Pusula AI, des contenus vidéo adaptés à ton domaine et 50 coins offerts par mois. Tu achètes les cours individuels avec des coins.", "Hazır tematik paketler": "Packs thématiques prêts à l'emploi", "Yükle": "Charger", "Paket gerekmez. Ekstra içeriklere ve uzman eğitmenle birebir canlı derslere kullandıkça öde. 100 coin €25, 300 coin €66, 700 coin €140.": "Aucun pack requis. Paie à l'usage pour des contenus en plus et des cours individuels en direct avec des experts. 100 coins 25 €, 300 coins 66 €, 700 coins 140 €.", "Senin programın için en uygun": "Le plus adapté à ton programme", "Kurumsal (B2B)": "Entreprises (B2B)", "Üniversite, danışmanlık firması ve özel eğitim kurumları kapalı sınıf açar, kendi içeriklerini ekler, kütüphaneden içerik alır.": "Universités, cabinets de conseil et établissements privés ouvrent des classes fermées, ajoutent leurs contenus et utilisent la bibliothèque.", "Fiyatlar beta için örnektir.": "Les prix sont des exemples pour la bêta.", "Hesap": "Compte", "Kayıt ol": "Créer un compte", "Ad soyad": "Nom complet", "E-posta": "E-mail", "Şifre": "Mot de passe", "Kayıt ol, 1.000 coin kazan": "Créer un compte et gagner 1 000 coins", "Demo hesabıyla gir": "Entrer avec le compte démo", "Beta: hesaplar yalnızca bu tarayıcıda saklanır. Yeni hesaba 1.000 coin hoş geldin bonusu yüklenir.": "Bêta : les comptes sont stockés uniquement dans ce navigateur. Un nouveau compte reçoit 1 000 coins de bienvenue.", "Coin bakiyesi": "Solde de coins", "Hareketler": "Opérations", "Satın alınanlar": "Achats", "Henüz yok.": "Rien pour l'instant.", "Çıkış yap": "Se déconnecter", "Coin yükle": "Recharger des coins", "Öde (test)": "Payer (test)", "Vazgeç": "Annuler", "Adını yaz.": "Écris ton nom.", "Geçerli bir e-posta yaz.": "Écris un e-mail valide.", "Şifre en az 6 karakter olmalı.": "Le mot de passe doit faire au moins 6 caractères.", "Bu e-posta kayıtlı. Giriş yap.": "Cet e-mail est déjà enregistré. Connecte-toi.", "E-posta veya şifre hatalı.": "E-mail ou mot de passe incorrect.", "Çıkış yapıldı": "Déconnecté", "Demo hesabıyla giriş yapıldı": "Connecté avec le compte démo", "Hoş geldin! 1.000 coin hesabına yüklendi": "Bienvenue ! 1 000 coins ajoutés à ton compte", "Giriş yapıldı": "Connecté", "Önce giriş yap": "Connecte-toi d'abord", "Satın alındı. Hesabından görebilirsin": "Acheté. Tu le retrouves dans ton compte", "Uygulama arayüzünün dili.": "Langue de l'interface de l'application.", "Tema": "Thème", "Açık": "Clair", "Koyu": "Sombre", "Sistem": "Système", "Açık tema varsayılandır.": "Le thème clair est le thème par défaut.", "Hakkında": "À propos", "Ayarlar ve hesaplar bu tarayıcıda saklanır. Vizyon, ödeme altyapısı ve ders içerikleri şimdilik Türkçe.": "Les réglages et les comptes sont stockés dans ce navigateur.", "Lingua Pusula · Beta sürüm": "Lingua Pusula · Version bêta"};
+const SBF=[[" test modu, gerçek ödeme alınmaz", " mode test, aucun paiement réel"], [" coin tutarında birebir ders", " coins de cours individuels"], ["Haftalık çalışma süresi:", "Temps d'étude par semaine :"], ["Hoş geldin bonusu (beta)", "Bonus de bienvenue (bêta)"], ["Orta ölçekli işletmeler", "Entreprises de taille moyenne"], ["Uluslararası ilişkiler", "Relations internationales"], ["Restoran işletmeciliği", "Gestion de restaurant"], ["Subjonctif ve koşullar", "Subjonctif et conditions"], ["Marka ve konumlandırma", "Marque et positionnement"], ["Merkez bankası ve faiz", "Banque centrale et taux d'intérêt"], ["Tarifler ve teknikler", "Recettes et techniques"], ["Sıradaki uyumlu kurs:", "Prochain cours compatible :"], ["Program satın alındı:", "Programme acheté :"], ["Piyasalar ve yatırım", "Marchés et investissement"], ["Yenilenebilir enerji", "Énergies renouvelables"], ["Hava trafik kontrolü", "Contrôle du trafic aérien"], ["Coin yükleme (test):", "Recharge de coins (test) :"], ["Mutfak ve menü dili", "Langage de la cuisine et du menu"], ["Uluslararası hukuk", "Droit international"], ["Bilişsel yanlılık", "Biais cognitif"], ["Otel rezervasyonu", "Réservation d'hôtel"], ["Siyasi sistemler", "Systèmes politiques"], ["Şirket raporları", "Rapports d'entreprise"], ["Enflasyon nedir?", "Qu'est-ce que l'inflation ?"], ["Seçim sistemleri", "Systèmes électoraux"], ["Detaylı açıklama", "Explication détaillée"], ["/ ay · kişi başı", "/ mois · par personne"], ["Bakiye yetersiz:", "Solde insuffisant :"], ["(örnek eğitmen)", "(formateur exemple)"], ["Temel kavramlar", "Notions de base"], ["Sözleşme ihlali", "Rupture de contrat"], ["Kira sözleşmesi", "Contrat de location"], ["Diplomasi dili", "Langage diplomatique"], ["Mutfak brigadı", "La brigade de cuisine"], [" coin yüklendi", " coins ajoutés"], ["Sözleşme dili", "Langage des contrats"], ["Bulut bilişim", "Cloud computing"], ["Birebir ders", "Cours individuel"], ["Hukuka giriş", "Introduction au droit"], ["Sanat tarihi", "Histoire de l'art"], ["Haber yazımı", "Rédaction journalistique"], ["Mühendislik", "Ingénierie"], ["Gazetecilik", "Journalisme"], [" coin eksik", " coins manquants"], ["İspanyolca", "Espagnol"], ["Dilbilgisi", "Grammaire"], ["Gastronomi", "Gastronomie"], ["Programın:", "Ton programme :"], ["Fransızca", "Français"], ["İngilizce", "Anglais"], ["İtalyanca", "Italien"], ["Pazarlama", "Marketing"], ["Psikoloji", "Psychologie"], ["Havacılık", "Aviation"], ["Betonarme", "Béton armé"], ["Mimarlık", "Architecture"], ["yaklaşık", "environ"], ["Bakiyen:", "Ton solde :"], [" öğrenci", " élèves"], ["birebir", "individuel"], ["Almanca", "Allemand"], ["Siyaset", "Politique"], ["Ekonomi", "Économie"], ["Bilişim", "Informatique"], ["Tasarım", "Design"], [". cümle", ". phrase"], ["Finans", "Finance"], ["Turizm", "Tourisme"], ["Triyaj", "Triage"], [" hafta", " semaines"], ["Toplam", "Total"], [" ay · ", " mois · "], [" saat", " heures"], ["Hukuk", "Droit"], [" kurs", " cours"], ["Moda", "Mode"], [" sa)", " h)"], ["Tıp", "Médecine"]];
+const NEW=[["Program", "Program", "Programme"], ["Pusula AI ile açıkla", "Explain with Pusula AI", "Expliquer avec Pusula AI"], ["Pusula AI hazırlıyor…", "Pusula AI is preparing…", "Pusula AI prépare…"], ["Örnek açıklama Türkçedir. Kendi dilinde almak için Pusula AI düğmesine dokun.", "This sample explanation is in Turkish. Tap the Pusula AI button to get it in your language.", "Cette explication d'exemple est en turc. Touche le bouton Pusula AI pour l'avoir dans ta langue."], ["Pusula AI şu an kullanılamıyor.", "Pusula AI is not available right now.", "Pusula AI n'est pas disponible pour le moment."], ["Bu bölüm Türkçe yazıldı.", "This section is written in Turkish.", "Cette section est écrite en turc."], ["Pusula AI ile çevir", "Translate with Pusula AI", "Traduire avec Pusula AI"], ["Çeviri hazır", "Translation ready", "Traduction prête"], ["Çeviriliyor…", "Translating…", "Traduction en cours…"], ["Ayarlar ve hesaplar bu tarayıcıda saklanır. Vizyon ve ödeme altyapısı yazıları Türkçe yazıldı; Pusula AI ile kendi dilinde çevrilebilir.", "Settings and accounts are stored in this browser. The Vision and payment infrastructure texts are written in Turkish; Pusula AI can translate them into your language.", "Les réglages et les comptes sont stockés dans ce navigateur. Les textes Vision et infrastructure de paiement sont écrits en turc ; Pusula AI peut les traduire dans ta langue."]];
+NEW.forEach(x=>{EX[x[0]]=x[1];EXF[x[0]]=x[2]});
+[['Bu beta sürümünde ayarlar, demo hesapları ve ilerleme yalnızca bu tarayıcıda saklanır. Gerçek üyelik, sunucu senkronizasyonu ve ödeme altyapısı henüz bağlı değildir. Pusula AI özellikleri için ayrıca güvenli bir sunucu entegrasyonu gerekir.','Settings and accounts are stored in this browser. In languages other than Turkish, content is translated by Pusula AI the first time you pick the language and stored in this browser.',`Les réglages et les comptes sont stockés dans ce navigateur. Dans les langues autres que le turc, le contenu est traduit par Pusula AI à la première sélection de la langue et stocké dans ce navigateur.`],
+['Bu dil için içerik henüz çevrilmedi.','The content for this language has not been translated yet.',`Le contenu de cette langue n'a pas encore été traduit.`],
+['Pusula AI çevirisi hazırlanamadı','Pusula AI could not prepare the translation',`Pusula AI n'a pas pu préparer la traduction`]].forEach(x=>{EX[x[0]]=x[1];EXF[x[0]]=x[2]});
+function tr1(t){if(s.ui==='tr')return t;const D=DX[s.ui],fr=s.ui==='fr',E=D?D.E:fr?EXF:EX,B=D?D.B:fr?SBF:SB,k=t.trim();if(E[k])return t.replace(k,()=>E[k]);let o=t;for(const[a,b]of B)if(o.includes(a))o=o.split(a).join(b);return o}
+function xl(root){if(s.ui==='tr'||!root||!document.createTreeWalker)return;const w=document.createTreeWalker(root,4),L=[];let n;while(n=w.nextNode())L.push(n);L.forEach(n=>{const p=n.parentElement;if(p&&p.closest('[data-keep]')){const z=n.nodeValue.trim(),c=TC[s.ui+'|'+z];if(c)n.nodeValue=n.nodeValue.replace(z,()=>c);return}const v=tr1(n.nodeValue);if(v!==n.nodeValue)n.nodeValue=v});root.querySelectorAll('[aria-label]').forEach(e=>{if(!e.closest('[data-keep]'))e.setAttribute('aria-label',tr1(e.getAttribute('aria-label')))})}
+function applyUI(){const de=document.documentElement;if(de){de.setAttribute('data-theme',s.th||'light');de.lang=s.ui||'tr';de.dir=s.ui==='ar'?'rtl':'ltr'}xl($('app'));xl($('nav'))}
+function vS(){
+ const o=(k,a,keep)=>`<div class="chips"${keep?' data-keep':''}>${a.map(([v,l])=>`<button class="chip${(s[k]||a[0][0])===v?' on':''}" data-a="set" data-k="${k}" data-v="${v}">${l}</button>`).join('')}</div>`;
+ return `<h2>Ayarlar</h2><div class="card"><h3>Dil</h3><p class="meta">Uygulama arayüzünün dili.</p>${o('ui',[['tr','Türkçe'],['en','English'],['fr','Français'],['de','Deutsch'],['it','Italiano'],['pt','Português'],['ar','العربية']],1)}</div><div class="card"><h3>Tema</h3><p class="meta">Açık tema varsayılandır.</p>${o('th',[['light','Açık'],['dark','Koyu'],['system','Sistem']])}</div><div class="card"><h3>Hakkında</h3><p class="meta" style="margin:0">Bu beta sürümünde ayarlar, demo hesapları ve ilerleme yalnızca bu tarayıcıda saklanır. Gerçek üyelik, sunucu senkronizasyonu ve ödeme altyapısı henüz bağlı değildir. Pusula AI özellikleri için ayrıca güvenli bir sunucu entegrasyonu gerekir.</p></div>`}
+
+function r(){
+ try{localStorage.setItem('lp-beta',JSON.stringify(s))}catch(e){}
+ $('app').innerHTML=lzBar()+{k:vK,p:vP,d:vD,f:vF,v:()=>trBtn()+'<div data-keep>'+vV()+'</div>',x:vS}[s.tab]()+'<p class="sub" style="text-align:center;margin:28px 0 0">Lingua Pusula · Beta sürüm</p>';
+ $('nav').innerHTML=[['k','Keşfet'],['p','Program'],['d','Ders'],['f','Fiyat'],['v','Vizyon'],['x','Ayarlar']].map(([k,t])=>`<button class="${s.tab===k?'on':''}" data-a="tab" data-v="${k}">${t}${k==='p'&&s.prog.length?' ('+s.prog.length+')':''}</button>`).join('');hdr();applyUI()}
+document.addEventListener('click',e=>{const b=e.target.closest('[data-a]');if(!b)return;const d=b.dataset,a=d.a;
+ if(a==='set'){s[d.k]=d.v}
+ else if(a==='tab'){s.tab=d.v;scrollTo(0,0)}
+ else if(a==='tog'||a==='sug'){const i=+d.i,m=d.m||'video',k=find(s.lang,s.field,i,s.level);
+  if(a==='sug'){const l=s.prog[s.prog.length-1];s.prog.push({lang:l.lang,field:l.field,i,level:l.level,mode:'video'})}
+  else if(k>=0&&s.prog[k].mode===m)s.prog.splice(k,1);else if(k>=0)s.prog[k].mode=m;else s.prog.push({lang:s.lang,field:s.field,i,level:s.level,mode:m})}
+ else if(a==='del')s.prog.splice(+d.k,1);
+ else if(a==='seat')s.seat=+d.v;
+ else if(a==='trg')s.tr=!s.tr;
+ else if(a==='word')s.w=s.w===d.v?'':d.v;
+ else if(a==='fs'){const w=$('plw');if(PL.fs)exitFs();else{PL.fs=true;try{if(w&&w.requestFullscreen)w.requestFullscreen().then(()=>{PL.nat=true;try{screen.orientation.lock('landscape').catch(()=>{})}catch(e){}}).catch(()=>{})}catch(e){}}}
+ else if(a==='ai')aiLesson();
+ else if(a==='lz')localize();
+ else if(a==='ls'){PL.k=+d.v;PL.i=0;PL.tm=0;PL.dt=false;PL.hs=false;PL.play=false;try{speechSynthesis.cancel()}catch(e){}}
+ else if(a==='hs')PL.hs=!PL.hs;
+ else if(a==='pp'){PL.play=!PL.play;if(PL.play){if(PL.i===sn().length-1)PL.i=0;say()}else{try{speechSynthesis.cancel()}catch(e){}}}
+ else if(a==='nx'){PL.i=Math.min(sn().length-1,PL.i+1);PL.tm=0;say()}
+ else if(a==='pv'){PL.i=Math.max(0,PL.i-1);PL.tm=0;say()}
+ else if(a==='lab')PL.lab=!PL.lab;
+ else if(a==='tm')PL.tm=+d.v;
+ else if(a==='dt')PL.dt=!PL.dt;
+ else if(a==='snd'){PL.snd=!PL.snd;if(PL.snd)say();else{try{speechSynthesis.cancel()}catch(e){}}}
+ else if(a==='pre'){const p=PRE[+d.v];Object.assign(s,p);s.prog=FD[p.field].map((_,i)=>({...p,i,mode:'video'}));s.tab='p';scrollTo(0,0)}
+ if(a==='set'&&d.k==='ui'&&s.ui!=='tr'&&!DN[s.ui])localize();PA.includes(a)?rd():r()});
+document.addEventListener('input',e=>{if(e.target.id==='wk'){s.wk=+e.target.value;const y=scrollY;r();scrollTo(0,y);$('wk').focus()}});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&OV){OV='';rov()}});
+document.addEventListener('click',async e=>{
+ if(e.target.id==='ov'){OV='';rov();return}
+ const b=e.target.closest('[data-a]');if(!b)return;const a=b.dataset.a,v=b.dataset.v,u=me(),val=id=>(($(id)||{}).value||'').trim(),fail=m=>{if($('ferr'))$('ferr').textContent=tr1(m)},done=m=>{OV='';rov();hdr();toast(m)};
+ if(a==='acc'){OV='acc';rov()}
+ else if(a==='close'){OV='';rov()}
+ else if(a==='am'){AM=v;rov()}
+ else if(a==='out'){DB.session=null;sv();done('Çıkış yapıldı')}
+ else if(a==='demo'){const m='demo@linguapusula.com';if(!DB.users[m])DB.users[m]=await mk('Demo Öğrenci','demo1234');DB.session=m;sv();done('Demo hesabıyla giriş yapıldı')}
+ else if(a==='reg'){const n=val('f-n'),m=val('f-e').toLowerCase(),p=val('f-p');
+  if(n.length<2)return fail('Adını yaz.');if(!/^\S+@\S+\.\S+$/.test(m))return fail('Geçerli bir e-posta yaz.');if(p.length<6)return fail('Şifre en az 6 karakter olmalı.');if(DB.users[m])return fail('Bu e-posta kayıtlı. Giriş yap.');
+  DB.users[m]=await mk(n,p);DB.session=m;sv();done('Hoş geldin! 1.000 coin hesabına yüklendi')}
+ else if(a==='login'){const m=val('f-e').toLowerCase(),x=DB.users[m];if(!x||await hx(x.salt+val('f-p'))!==x.hash)return fail('E-posta veya şifre hatalı.');DB.session=m;sv();done('Giriş yapıldı')}
+ else if(a==='pack'){if(!u){OV='acc';AM='login';rov();toast('Önce giriş yap');return}PI=+v;OV='buy';rov()}
+ else if(a==='pay'){const p=PK[PI];u.coins+=p[0];u.hist.unshift({t:Date.now(),k:'Coin yükleme (test): '+p[0]+' coin',c:p[0]});sv();OV='acc';rov();hdr();toast(p[0]+' coin yüklendi')}
+ else if(a==='buyprog'){const st=stats();if(!u){OV='acc';rov();toast('Satın almak için giriş yap');return}
+  if(u.coins<st.c){OV='acc';rov();toast('Bakiye yetersiz: '+(st.c-u.coins)+' coin eksik');return}
+  u.coins-=st.c;u.hist.unshift({t:Date.now(),k:'Program satın alındı: '+s.prog.length+' kurs',c:-st.c});u.owned.push(...s.prog.map(x=>nm(x)));s.prog=[];sv();r();toast('Satın alındı. Hesabından görebilirsin')}
+});
+r();
+</script>
+</body>
+</html>
